@@ -13,6 +13,7 @@
     "ios": "expo run:ios"
   },
   "dependencies": {
+    "@stylexjs/stylex": "^0.7.5",
     "expo": "~51.0.0",
     "expo-linking": "~6.3.0",
     "expo-router": "^3.0.0",
@@ -22,6 +23,7 @@
     "react-native-webview": "13.8.6"
   },
   "devDependencies": {
+    "@stylexjs/babel-plugin": "^0.7.5",
     "autoprefixer": "^10.4.16",
     "morgan": "^1.10.0",
     "tailwindcss": "^3.3.5",
