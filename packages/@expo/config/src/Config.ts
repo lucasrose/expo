@@ -2,7 +2,6 @@ import { ModConfig } from '@expo/config-plugins';
 import JsonFile, { JSONObject } from '@expo/json-file';
 import fs from 'fs';
 import { sync as globSync } from 'glob';
-import assert from 'node:assert';
 import path from 'path';
 import resolveFrom from 'resolve-from';
 import semver from 'semver';
