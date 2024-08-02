@@ -343,7 +343,7 @@ describe(modifyConfigAsync, () => {
 
   afterEach(() => vol.reset());
 
-  xit('succeeds without existing config', async () => {
+  it('succeeds without existing config', async () => {
     createProject('/no-config');
 
     await expect(modifyConfigAsync('/no-config', { name: 'new name' })).resolves.toMatchObject({
@@ -352,7 +352,7 @@ describe(modifyConfigAsync, () => {
     });
   });
 
-  xit('succeeds when modifying static config only', async () => {
+  it('succeeds when modifying static config only', async () => {
     createProject('/static-only', {
       'app.json': JSON.stringify(appFile, null, 2),
     });
@@ -363,7 +363,7 @@ describe(modifyConfigAsync, () => {
     });
   });
 
-  xit('warns when modifying dynamic config only', async () => {
+  it('warns when modifying dynamic config only', async () => {
     createProject('/dynamic-only', {
       'app.config.js': `module.exports = () => JSON.parse(\`${JSON.stringify({ ...appFile, version: '9.9.9' })}\`);`,
     });
@@ -375,7 +375,7 @@ describe(modifyConfigAsync, () => {
     });
   });
 
-  xit('warns when modifying static with object-like dynamic config', async () => {
+  it('warns when modifying static with object-like dynamic config', async () => {
     createProject('/static-dynamic-object', {
       'app.json': JSON.stringify(appFile),
       'app.config.js': `module.exports = JSON.parse(\`${JSON.stringify({ ...appFile, version: '9.9.9' })}\`);`,
@@ -390,7 +390,7 @@ describe(modifyConfigAsync, () => {
     });
   });
 
-  xit('warns when modifying static with function-like dynamic config, without extending config', async () => {
+  it('warns when modifying static with function-like dynamic config, without extending config', async () => {
     createProject('/static-dynamic-function', {
       'app.json': JSON.stringify(appFile),
       'app.config.js': `module.exports = () => JSON.parse(\`${JSON.stringify({ ...appFile, version: '9.9.9' })}\`);`,
