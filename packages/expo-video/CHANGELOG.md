@@ -13,6 +13,7 @@
 
 - [Android] Fix support for local file playback. ([#30472](https://github.com/expo/expo/pull/30472) by [@behenate](https://github.com/behenate))
 - Only import from `expo/config-plugins` to follow proper dependency chains. ([#30499](https://github.com/expo/expo/pull/30499) by [@byCedric](https://github.com/byCedric))
+- [Android] Fix playback of videos loaded with `expo-asset`. ([#30837](https://github.com/expo/expo/pull/30837) by [@behenate](https://github.com/behenate))
 
 ### 💡 Others
 
