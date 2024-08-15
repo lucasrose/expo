@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
 
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
+"SWIFT_OBJC_INTEROP_MODE" => "objcxx",
   }
   
   s.source_files = "**/*.{h,m,swift}"

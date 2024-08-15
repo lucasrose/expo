@@ -1,5 +1,7 @@
 // Copyright 2021-present 650 Industries. All rights reserved.
 
+@_implementationOnly import ExpoModulesCoreCxx
+
 public struct Promise: AnyArgument {
   public typealias ResolveClosure = (Any?) -> Void
   public typealias RejectClosure = (Exception) -> Void

@@ -1,4 +1,4 @@
-import React
+@_implementationOnly import React
 import ExpoModulesCore
 
 public class ExpoAppleMapsModule: Module {

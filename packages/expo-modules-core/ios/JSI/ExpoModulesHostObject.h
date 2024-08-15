@@ -17,7 +17,7 @@ using UniqueJSIObject = std::unique_ptr<jsi::Object>;
 
 class JSI_EXPORT ExpoModulesHostObject : public jsi::HostObject {
 public:
-  ExpoModulesHostObject(EXAppContext *appContext);
+//  ExpoModulesHostObject(EXAppContext *appContext);
 
   virtual ~ExpoModulesHostObject();
 

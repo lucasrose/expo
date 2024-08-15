@@ -156,6 +156,9 @@ public struct Conversions {
     appContext: AppContext? = nil,
     dynamicType: AnyDynamicType? = nil
   ) -> Any {
+    if let value = value as? Double {
+      return value
+    }
     if let value = value as? Record {
       return value.toDictionary()
     }

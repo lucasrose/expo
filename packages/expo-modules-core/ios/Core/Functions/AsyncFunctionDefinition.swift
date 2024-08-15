@@ -1,6 +1,7 @@
 // Copyright 2022-present 650 Industries. All rights reserved.
 
 import Dispatch
+import ExpoModulesCoreJSI
 
 /**
  Type-erased protocol for asynchronous functions.
@@ -121,16 +122,17 @@ public final class AsyncFunctionDefinition<Args, FirstArgType, ReturnType>: AnyA
     // It seems to be safe to capture a strong reference to `self` here. This is needed for detached functions, that are not part of the module definition.
     // Module definitions are held in memory anyway, but detached definitions (returned by other functions) are not, so we need to capture them here.
     // It will be deallocated when that JS host function is garbage-collected by the JS VM.
-    return try appContext.runtime.createAsyncFunction(name, argsCount: argumentsCount) { [self] this, args, resolve, reject in
-      self.call(by: this, withArguments: args, appContext: appContext) { result in
-        switch result {
-        case .failure(let error):
-          reject(error.code, error.description, nil)
-        case .success(let value):
-          resolve(value)
-        }
-      }
-    }
+//    return try appContext.runtime.createAsyncFunction(name, argsCount: argumentsCount) { [self] this, args, resolve, reject in
+//      self.call(by: this, withArguments: args, appContext: appContext) { result in
+//        switch result {
+//        case .failure(let error):
+//          reject(error.code, error.description, nil)
+//        case .success(let value):
+//          resolve(value)
+//        }
+//      }
+//    }
+    fatalError()
   }
 
   // MARK: - AnyAsyncFunctionDefinition

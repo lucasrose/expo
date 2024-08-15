@@ -1,5 +1,39 @@
 // Copyright 2022-present 650 Industries. All rights reserved.
 
+import ExpoModulesCoreJSI
+
+/**
+ A protocol that JavaScript values, objects and functions can conform to.
+ */
+protocol AnyJavaScriptValue: AnyArgument {
+  /**
+   Tries to convert a raw JavaScript value to the conforming type.
+   */
+  static func convert(from value: JavaScriptValue, appContext: AppContext) throws -> Self
+}
+
+extension AnyJavaScriptValue {
+  public static func getDynamicType() -> AnyDynamicType {
+    return DynamicJavaScriptType(innerType: Self.self)
+  }
+}
+
+extension JavaScriptValue: AnyJavaScriptValue {
+  internal static func convert(from value: JavaScriptValue, appContext: AppContext) throws -> Self {
+    // It's already a `JavaScriptValue` so it should always pass through.
+    if let value = value as? Self {
+      return value
+    }
+    throw JavaScriptValueConversionException((kind: value.kind, target: String(describing: Self.self)))
+  }
+}
+
+internal final class JavaScriptValueConversionException: GenericException<(kind: JavaScriptValueKind, target: String)> {
+  override var reason: String {
+    "Cannot represent a value of kind '\(param.kind)' as \(param.target)"
+  }
+}
+
 // MARK: - Arguments
 
 /**

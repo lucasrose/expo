@@ -7,6 +7,9 @@
 #include <ReactCommon/CallInvoker.h>
 #include <ReactCommon/RuntimeExecutor.h>
 
+namespace react = facebook::react;
+namespace jsi = facebook::jsi;
+
 namespace expo {
 
 class BridgelessJSCallInvoker : public react::CallInvoker {

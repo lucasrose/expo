@@ -1,5 +1,7 @@
 // Copyright 2022-present 650 Industries. All rights reserved.
 
+import ExpoModulesCoreJSI
+
 /**
  Type-erased protocol for synchronous functions.
  */
@@ -97,12 +99,13 @@ public final class SyncFunctionDefinition<Args, FirstArgType, ReturnType>: AnySy
     // immediately lose the reference to the definition and thus the underlying native function.
     // It may potentially cause memory leaks, but at the time of writing this comment,
     // the native definition instance deallocates correctly when the JS VM triggers the garbage collector.
-    return try appContext.runtime.createSyncFunction(name, argsCount: argumentsCount) { [weak appContext, self] this, args in
-      guard let appContext else {
-        throw Exceptions.AppContextLost()
-      }
-      let result = try self.call(by: this, withArguments: args, appContext: appContext)
-      return Conversions.convertFunctionResult(result, appContext: appContext, dynamicType: ~ReturnType.self)
-    }
+//    return try appContext.runtime.createSyncFunction(name, argsCount: argumentsCount) { [weak appContext, self] this, args in
+//      guard let appContext else {
+//        throw Exceptions.AppContextLost()
+//      }
+//      let result = try self.call(by: this, withArguments: args, appContext: appContext)
+//      return Conversions.convertFunctionResult(result, appContext: appContext, dynamicType: ~ReturnType.self)
+//    }
+    fatalError()
   }
 }

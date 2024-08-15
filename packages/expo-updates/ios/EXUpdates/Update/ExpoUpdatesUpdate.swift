@@ -1,7 +1,7 @@
 //  Copyright © 2019 650 Industries. All rights reserved.
 
 import Foundation
-import React
+@_implementationOnly import React
 import EXManifests
 
 public final class ExpoUpdatesUpdate: Update {

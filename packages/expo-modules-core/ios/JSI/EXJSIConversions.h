@@ -8,8 +8,13 @@
 #import <React/RCTBridgeModule.h>
 #import <ReactCommon/CallInvoker.h>
 
-using namespace facebook;
-using namespace react;
+namespace facebook{
+namespace react {};
+namespace jsi {};
+};
+
+namespace react = facebook::react;
+namespace jsi = facebook::jsi;
 
 @class EXJavaScriptValue;
 @class EXJavaScriptRuntime;
@@ -32,15 +37,15 @@ jsi::Value convertObjCObjectToJSIValue(jsi::Runtime &runtime, id value);
 
 NSString *convertJSIStringToNSString(jsi::Runtime &runtime, const jsi::String &value);
 
-NSArray *convertJSIArrayToNSArray(jsi::Runtime &runtime, const jsi::Array &value, std::shared_ptr<CallInvoker> jsInvoker);
+NSArray *convertJSIArrayToNSArray(jsi::Runtime &runtime, const jsi::Array &value, std::shared_ptr<react::CallInvoker> jsInvoker);
 
 NSArray<EXJavaScriptValue *> *convertJSIValuesToNSArray(EXJavaScriptRuntime *runtime, const jsi::Value *values, size_t count);
 
-NSDictionary *convertJSIObjectToNSDictionary(jsi::Runtime &runtime, const jsi::Object &value, std::shared_ptr<CallInvoker> jsInvoker);
+NSDictionary *convertJSIObjectToNSDictionary(jsi::Runtime &runtime, const jsi::Object &value, std::shared_ptr<react::CallInvoker> jsInvoker);
 
-id convertJSIValueToObjCObject(jsi::Runtime &runtime, const jsi::Value &value, std::shared_ptr<CallInvoker> jsInvoker);
+id convertJSIValueToObjCObject(jsi::Runtime &runtime, const jsi::Value &value, std::shared_ptr<react::CallInvoker> jsInvoker);
 
-RCTResponseSenderBlock convertJSIFunctionToCallback(jsi::Runtime &runtime, const jsi::Function &value, std::shared_ptr<CallInvoker> jsInvoker);
+RCTResponseSenderBlock convertJSIFunctionToCallback(jsi::Runtime &runtime, const jsi::Function &value, std::shared_ptr<react::CallInvoker> jsInvoker);
 
 } // namespace expo
 

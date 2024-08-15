@@ -1,5 +1,7 @@
 // Copyright 2022-present 650 Industries. All rights reserved.
 
+import ExpoModulesCoreJSI
+
 /**
  Represents a concurrent function that can only be called asynchronously, thus its JavaScript equivalent returns a Promise.
  As opposed to `AsyncFunctionDefinition`, it can leverage the new Swift's concurrency model and take the async/await closure.
@@ -86,27 +88,28 @@ public final class ConcurrentFunctionDefinition<Args, FirstArgType, ReturnType>:
   // MARK: - JavaScriptObjectBuilder
 
   func build(appContext: AppContext) throws -> JavaScriptObject {
-    return try appContext.runtime.createAsyncFunction(name, argsCount: argumentsCount) {
-      [weak appContext, weak self, name] this, args, resolve, reject in
-
-      guard let appContext else {
-        let exception = Exceptions.AppContextLost()
-        return reject(exception.code, exception.description, nil)
-      }
-      guard let self else {
-        let exception = NativeFunctionUnavailableException(name)
-        return reject(exception.code, exception.description, nil)
-      }
-      self.call(by: this, withArguments: args, appContext: appContext) { result in
-        switch result {
-        case .failure(let error):
-          reject(error.code, error.description, nil)
-        case .success(let value):
-          // Convert some results to primitive types (e.g. records) or JS values (e.g. shared objects)
-          let convertedResult = Conversions.convertFunctionResult(value, appContext: appContext, dynamicType: ~ReturnType.self)
-          resolve(convertedResult)
-        }
-      }
-    }
+    fatalError()
+//    return try appContext.runtime.createAsyncFunction(name, argsCount: argumentsCount) {
+//      [weak appContext, weak self, name] this, args, resolve, reject in
+//
+//      guard let appContext else {
+//        let exception = Exceptions.AppContextLost()
+//        return reject(exception.code, exception.description, nil)
+//      }
+//      guard let self else {
+//        let exception = NativeFunctionUnavailableException(name)
+//        return reject(exception.code, exception.description, nil)
+//      }
+//      self.call(by: this, withArguments: args, appContext: appContext) { result in
+//        switch result {
+//        case .failure(let error):
+//          reject(error.code, error.description, nil)
+//        case .success(let value):
+//          // Convert some results to primitive types (e.g. records) or JS values (e.g. shared objects)
+//          let convertedResult = Conversions.convertFunctionResult(value, appContext: appContext, dynamicType: ~ReturnType.self)
+//          resolve(convertedResult)
+//        }
+//      }
+//    }
   }
 }

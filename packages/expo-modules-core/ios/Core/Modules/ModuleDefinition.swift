@@ -1,3 +1,5 @@
+import ExpoModulesCoreJSI
+
 /**
  The definition of the module. It is used to define some parameters
  of the module and what it exports to the JavaScript world.
@@ -106,6 +108,10 @@ internal struct ConstantsDefinition: AnyDefinition {
 /**
  A definition for module's events that can be sent to JavaScript.
  */
-public struct EventsDefinition: AnyDefinition {
+public class EventsDefinition: AnyDefinition {
   let names: [String]
+
+  init(names: [String]) {
+    self.names = names
+  }
 }

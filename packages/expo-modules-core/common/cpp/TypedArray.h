@@ -41,6 +41,8 @@ class TypedArray : public jsi::Object {
   jsi::ArrayBuffer getBuffer(jsi::Runtime &runtime) const;
 
   void* getRawPointer(jsi::Runtime &runtime);
+
+  jsi::Object toObject(jsi::Runtime &runtime) const;
 };
 
 bool isTypedArray(jsi::Runtime &runtime, const jsi::Object &jsObj);

@@ -14,6 +14,10 @@ NativeState::~NativeState() {
   releaser(objectId);
 }
 
+std::shared_ptr<jsi::NativeState> NativeState::makeShared(const ObjectId objectId, const ObjectReleaser releaser) {
+  return std::make_shared<NativeState>(objectId, releaser);
+}
+
 #pragma mark - Utils
 
 void installBaseClass(jsi::Runtime &runtime, const ObjectReleaser releaser) {

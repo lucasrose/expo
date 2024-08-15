@@ -2,7 +2,7 @@
 
 import ExpoModulesCore
 import SafariServices
-import React
+@_implementationOnly import React
 
 private let DEV_LAUNCHER_DEFAULT_SCHEME = "expo-dev-launcher"
 

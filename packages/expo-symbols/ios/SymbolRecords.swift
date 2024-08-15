@@ -1,4 +1,4 @@
-import ExpoModulesCore
+@_implementationOnly import ExpoModulesCore
 
 enum SymbolScale: String, Enumerable {
   case `default`

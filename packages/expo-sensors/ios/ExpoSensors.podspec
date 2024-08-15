@@ -20,6 +20,12 @@ Pod::Spec.new do |s|
 
   s.dependency 'ExpoModulesCore'
 
+  # Swift/Objective-C compatibility
+  s.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES',
+    'SWIFT_OBJC_INTEROP_MODE' => 'objcxx',
+  }
+
   s.source_files = "**/*.{h,m,swift}"
 
   if podfile_properties['MOTION_PERMISSION'] == 'false'

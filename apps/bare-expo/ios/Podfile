@@ -24,6 +24,9 @@ prepare_react_native_project!
 
 abstract_target 'BareExpoMain' do
   pod 'expo-dev-menu', path: '../../../packages/expo-dev-menu', :testspecs => ['Tests', 'UITests']
+  pod 'ExpoModulesCoreSwift', path: '../../../packages/expo-modules-core'
+  pod 'ExpoModulesCoreCxx', path: '../../../packages/expo-modules-core'
+  pod 'ExpoModulesCoreJSI', path: '../../../packages/expo-modules-core'
 
   use_expo_modules!(
     includeTests: true,

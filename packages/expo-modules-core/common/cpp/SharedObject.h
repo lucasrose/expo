@@ -52,6 +52,8 @@ public:
   NativeState(const ObjectId objectId, const ObjectReleaser releaser);
 
   virtual ~NativeState();
+
+  static std::shared_ptr<jsi::NativeState> makeShared(const ObjectId objectId, const ObjectReleaser releaser);
 }; // class NativeState
 
 } // namespace expo::SharedObject

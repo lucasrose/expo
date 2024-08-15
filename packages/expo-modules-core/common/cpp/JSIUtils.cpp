@@ -143,4 +143,26 @@ void defineProperty(jsi::Runtime &runtime, jsi::Object *object, const char *name
   });
 }
 
+bool isWeakRefSupported(jsi::Runtime &runtime) {
+  return runtime.global().hasProperty(runtime, "WeakRef");
+}
+
+jsi::Object createWeakRef(jsi::Runtime &runtime, jsi::Object &object) {
+  return runtime
+    .global()
+    .getProperty(runtime, "WeakRef")
+    .asObject(runtime)
+    .asFunction(runtime)
+    .callAsConstructor(runtime, jsi::Value(runtime, object))
+    .asObject(runtime);
+}
+
+jsi::Value derefWeakRef(jsi::Runtime &runtime, jsi::Object &object) {
+  return object
+    .getProperty(runtime, "deref")
+    .asObject(runtime)
+    .asFunction(runtime)
+    .callWithThis(runtime, object);
+}
+
 } // namespace expo::common

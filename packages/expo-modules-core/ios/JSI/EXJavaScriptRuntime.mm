@@ -19,7 +19,7 @@
 #import <ExpoModulesCore/EXJSIUtils.h>
 #import <ExpoModulesCore/EXJSIConversions.h>
 #import <ExpoModulesCore/SharedObject.h>
-#import <ExpoModulesCore/Swift.h>
+//#import <ExpoModulesCore/Swift.h>
 #import <ExpoModulesCore/TestingSyncJSCallInvoker.h>
 
 @implementation EXJavaScriptRuntime {

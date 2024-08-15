@@ -1,5 +1,7 @@
 // Copyright 2022-present 650 Industries. All rights reserved.
 
+@_implementationOnly import ExpoModulesCoreCxx
+
 /**
  Enum with available kinds of values. It's almost the same as a result of "typeof"
  in JavaScript, however `null` has its own kind (typeof null == "object").
@@ -15,23 +17,127 @@ public enum JavaScriptValueKind: String {
   case object
 }
 
-/**
- A protocol that JavaScript values, objects and functions can conform to.
- */
-protocol AnyJavaScriptValue: AnyArgument {
-  /**
-   Tries to convert a raw JavaScript value to the conforming type.
-   */
-  static func convert(from value: JavaScriptValue, appContext: AppContext) throws -> Self
-}
+@objc
+public class JavaScriptValue: NSObject {
+  public static let undefined = JavaScriptValue(value: .undefined())
+  public static let null = JavaScriptValue(value: .null())
 
-extension AnyJavaScriptValue {
-  public static func getDynamicType() -> AnyDynamicType {
-    return DynamicJavaScriptType(innerType: Self.self)
+  private weak var _runtime: JavaScriptRuntime?
+  internal let value: facebook.jsi.Value
+
+  internal var runtime: JavaScriptRuntime {
+    return _runtime!
   }
-}
 
-extension JavaScriptValue: AnyJavaScriptValue, AnyArgument {
+  init(runtime: JavaScriptRuntime, value: consuming facebook.jsi.Value) {
+    self._runtime = runtime
+    self.value = value
+  }
+
+  init(value: consuming facebook.jsi.Value) {
+    self.value = value
+  }
+
+  func copy() -> facebook.jsi.Value {
+    return facebook.jsi.Value(&runtime.pointee, value)
+  }
+
+  public func isUndefined() -> Bool {
+    return value.isUndefined()
+  }
+
+  public func isNull() -> Bool {
+    return value.isNull()
+  }
+
+  public func isBool() -> Bool {
+    return value.isBool()
+  }
+
+  public func isNumber() -> Bool {
+    return value.isNumber()
+  }
+
+  public func isString() -> Bool {
+    return value.isString()
+  }
+
+  public func isSymbol() -> Bool {
+    return value.isSymbol()
+  }
+
+  public func isObject() -> Bool {
+    return value.isObject()
+  }
+
+  public func isFunction() -> Bool {
+    guard value.isObject() else {
+      return false
+    }
+    return value.getObject(&runtime.pointee).isFunction(&runtime.pointee)
+  }
+
+  public func isTypedArray() -> Bool {
+    guard value.isObject() else {
+      return false
+    }
+    return expo.isTypedArray(&runtime.pointee, value.getObject(&runtime.pointee))
+  }
+
+  // MARK: - Type casting
+
+  public func getRaw() -> Any {
+    fatalError()
+  }
+
+  public func getBool() -> Bool {
+    return value.getBool()
+  }
+
+  public func getInt() -> Int {
+    return Int(value.getNumber())
+  }
+
+  public func getDouble() -> Double {
+    return value.getNumber()
+  }
+
+  public func getString() -> String {
+    return String(value.getString(&runtime.pointee).utf8(&runtime.pointee))
+  }
+
+  public func getArray() -> [JavaScriptValue] {
+    let jsiArray = value.getObject(&runtime.pointee).getArray(&runtime.pointee)
+    let size = jsiArray.size(&runtime.pointee)
+
+    return (0..<size).map { index in
+      let item = jsiArray.getValueAtIndex(&runtime.pointee, index)
+      return JavaScriptValue(runtime: runtime, value: item)
+    }
+  }
+
+  public func getDictionary() -> [String: Any] {
+    var object = value.getObject(&runtime.pointee)
+    return JSIUtils.convertObjectToDictionary(runtime: &runtime.pointee, object: &object)
+  }
+
+  public func getObject() -> JavaScriptObject {
+    return JavaScriptObject(runtime: runtime, pointee: value.getObject(&runtime.pointee))
+  }
+
+//  func getFunction() -> JavaScriptFunction<Any> {
+//    fatalError()
+//  }
+
+  public func getTypedArray() -> JavaScriptTypedArray? {
+    guard isTypedArray() else {
+      return nil
+    }
+    return JavaScriptTypedArray(runtime: runtime, pointee: value.asObject(&runtime.pointee))
+  }
+
+  // MARK: - old extension
+
   public var kind: JavaScriptValueKind {
     switch true {
     case isUndefined():
@@ -53,82 +159,88 @@ extension JavaScriptValue: AnyJavaScriptValue, AnyArgument {
     }
   }
 
-  func asBool() throws -> Bool {
-    if isBool() {
-      return getBool()
-    }
-    throw JavaScriptValueConversionException((kind: kind, target: "Bool"))
-  }
+//  func asBool() throws -> Bool {
+//    if isBool() {
+//      return getBool()
+//    }
+//    throw JavaScriptValueConversionException((kind: kind, target: "Bool"))
+//  }
 
-  func asInt() throws -> Int {
+  public func asInt() throws -> Int {
     if isNumber() {
       return getInt()
     }
-    throw JavaScriptValueConversionException((kind: kind, target: "Int"))
+    fatalError()
+//    throw JavaScriptValueConversionException((kind: kind, target: "Int"))
   }
 
-  func asDouble() throws -> Double {
+  public func asDouble() throws -> Double {
     if isNumber() {
       return getDouble()
     }
-    throw JavaScriptValueConversionException((kind: kind, target: "Double"))
+    fatalError()
+//    throw JavaScriptValueConversionException((kind: kind, target: "Double"))
   }
 
-  func asString() throws -> String {
+  public func asString() throws -> String {
     if isString() {
       return getString()
     }
-    throw JavaScriptValueConversionException((kind: kind, target: "String"))
+    fatalError()
+//    throw JavaScriptValueConversionException((kind: kind, target: "String"))
   }
 
-  func asArray() throws -> [JavaScriptValue?] {
+  public func asArray() throws -> [JavaScriptValue?] {
     if isObject() {
       return getArray()
     }
-    throw JavaScriptValueConversionException((kind: kind, target: "Array"))
+    fatalError()
+//    throw JavaScriptValueConversionException((kind: kind, target: "Array"))
   }
 
-  func asDict() throws -> [String: Any] {
+  public func asDict() throws -> [String: Any] {
     if isObject() {
       return getDictionary()
     }
-    throw JavaScriptValueConversionException((kind: kind, target: "Dict"))
+    fatalError()
+//    throw JavaScriptValueConversionException((kind: kind, target: "Dict"))
   }
 
-  func asObject() throws -> JavaScriptObject {
+  public func asObject() throws -> JavaScriptObject {
     if isObject() {
       return getObject()
     }
-    throw JavaScriptValueConversionException((kind: kind, target: "Object"))
+    fatalError()
+//    throw JavaScriptValueConversionException((kind: kind, target: "Object"))
   }
 
-  func asFunction() throws -> RawJavaScriptFunction {
-    if isFunction() {
-      return getFunction()
-    }
-    throw JavaScriptValueConversionException((kind: kind, target: "Function"))
-  }
+//  func asFunction() throws -> JavaScriptFunction<Any> {
+//    if isFunction() {
+//      return getFunction()
+//    }
+//    throw JavaScriptValueConversionException((kind: kind, target: "Function"))
+//  }
 
-  func asTypedArray() throws -> JavaScriptTypedArray {
-    if let typedArray = getTypedArray() {
-      return typedArray
-    }
-    throw JavaScriptValueConversionException((kind: kind, target: "TypedArray"))
-  }
+//  func asTypedArray() throws -> JavaScriptTypedArray {
+//    if let typedArray = getTypedArray() {
+//      return typedArray
+//    }
+//    throw JavaScriptValueConversionException((kind: kind, target: "TypedArray"))
+//  }
 
   // MARK: - AnyJavaScriptValue
 
-  internal static func convert(from value: JavaScriptValue, appContext: AppContext) throws -> Self {
-    // It's already a `JavaScriptValue` so it should always pass through.
-    if let value = value as? Self {
-      return value
-    }
-    throw JavaScriptValueConversionException((kind: value.kind, target: String(describing: Self.self)))
-  }
+//  internal static func convert(from value: JavaScriptValue, appContext: AppContext) throws -> Self {
+//    // It's already a `JavaScriptValue` so it should always pass through.
+//    if let value = value as? Self {
+//      return value
+//    }
+//    throw JavaScriptValueConversionException((kind: value.kind, target: String(describing: Self.self)))
+//  }
 }
 
-internal final class JavaScriptValueConversionException: GenericException<(kind: JavaScriptValueKind, target: String)> {
-  override var reason: String {
-    "Cannot represent a value of kind '\(param.kind)' as \(param.target)"
-  }
-}
+//internal final class JavaScriptValueConversionException: GenericException<(kind: JavaScriptValueKind, target: String)> {
+//  override var reason: String {
+//    "Cannot represent a value of kind '\(param.kind)' as \(param.target)"
+//  }
+//}

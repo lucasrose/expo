@@ -1,5 +1,7 @@
 // Copyright 2022-present 650 Industries. All rights reserved.
 
+import ExpoModulesCoreJSI
+
 public protocol AnySharedObject: AnyArgument {
   var sharedObjectId: SharedObjectId { get }
 }

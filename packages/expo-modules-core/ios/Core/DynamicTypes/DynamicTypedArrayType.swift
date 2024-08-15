@@ -1,7 +1,9 @@
 // Copyright 2022-present 650 Industries. All rights reserved.
 
+import ExpoModulesCoreJSI
+
 internal struct DynamicTypedArrayType: AnyDynamicType {
-  let innerType: AnyTypedArray.Type
+  let innerType: any AnyTypedArray.Type
 
   func wraps<InnerType>(_ type: InnerType.Type) -> Bool {
     return innerType == InnerType.self

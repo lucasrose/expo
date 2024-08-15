@@ -66,6 +66,10 @@ public class ImagePickerModule: Module, OnMediaPickingResultHandler {
       self.launchImagePicker(sourceType: .photoLibrary, options: options, promise: promise)
     })
     .runOnQueue(DispatchQueue.main)
+
+    Function("getNumber") {
+      return 1.0
+    }
   }
 
   private var currentPickingContext: PickingContext?

@@ -1,5 +1,13 @@
 // Copyright 2023-present 650 Industries. All rights reserved.
 
+import ExpoModulesCoreJSI
+
+class RawJavaScriptFunction {
+  func call(withArguments: Any..., thisObject: JavaScriptObject? = nil, asConstructor: Bool = false) -> JavaScriptValue {
+    return JavaScriptValue.undefined
+  }
+}
+
 /**
  Represents a JavaScript function that can be called by the native code and that must return the given generic `ReturnType`.
  */
@@ -57,7 +65,8 @@ public final class JavaScriptFunction<ReturnType>: AnyArgument, AnyJavaScriptVal
     guard value.kind == .function else {
       throw Conversions.ConvertingException<JavaScriptFunction<ReturnType>>(value)
     }
-    return Self(rawFunction: value.getFunction(), appContext: appContext)
+    fatalError()
+//    return Self(rawFunction: value.getFunction(), appContext: appContext)
   }
 }
 

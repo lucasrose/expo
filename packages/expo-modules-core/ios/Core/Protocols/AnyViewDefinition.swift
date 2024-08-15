@@ -1,3 +1,5 @@
+import ExpoModulesCoreJSI
+
 /**
  A protocol for any type-erased view definition.
  */

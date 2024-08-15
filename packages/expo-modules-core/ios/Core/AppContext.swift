@@ -1,9 +1,11 @@
-import React
+@_implementationOnly import React
+@_implementationOnly import ExpoModulesCoreCxx
+import ExpoModulesCoreJSI
 
 /**
  The app context is an interface to a single Expo app.
  */
-@objc(EXAppContext)
+@objc
 public final class AppContext: NSObject {
   internal static func create() -> AppContext {
     let appContext = AppContext()
@@ -369,7 +371,7 @@ public final class AppContext: NSObject {
   private func exportedModulesConstants() -> [String: Any] {
     return moduleRegistry
       // prevent infinite recursion - exclude NativeProxyModule constants
-      .filter { $0.name != NativeModulesProxyModule.moduleName }
+      .filter { $0.name != "NativeUnimoduleProxy" }
       .reduce(into: [String: Any]()) { acc, holder in
         acc[holder.name] = holder.getConstants()
       }
@@ -397,18 +399,18 @@ public final class AppContext: NSObject {
     try runtime.initializeCoreObject(coreObject)
 
     // Install `global.expo.EventEmitter`.
-    EXJavaScriptRuntimeManager.installEventEmitterClass(runtime)
-
-    // Install `global.expo.SharedObject`.
-    EXJavaScriptRuntimeManager.installSharedObjectClass(runtime) { [weak sharedObjectRegistry] objectId in
-      sharedObjectRegistry?.delete(objectId)
-    }
-
-    // Install `global.expo.NativeModule`.
-    EXJavaScriptRuntimeManager.installNativeModuleClass(runtime)
-
-    // Install the modules host object as the `global.expo.modules`.
-    EXJavaScriptRuntimeManager.installExpoModulesHostObject(self)
+//    EXJavaScriptRuntimeManager.installEventEmitterClass(runtime)
+//
+//    // Install `global.expo.SharedObject`.
+//    EXJavaScriptRuntimeManager.installSharedObjectClass(runtime) { [weak sharedObjectRegistry] objectId in
+//      sharedObjectRegistry?.delete(objectId)
+//    }
+//
+//    // Install `global.expo.NativeModule`.
+//    EXJavaScriptRuntimeManager.installNativeModuleClass(runtime)
+//
+//    // Install the modules host object as the `global.expo.modules`.
+//    EXJavaScriptRuntimeManager.installExpoModulesHostObject(self)
   }
 
   /**

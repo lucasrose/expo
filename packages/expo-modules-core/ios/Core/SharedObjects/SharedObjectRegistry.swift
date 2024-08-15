@@ -1,5 +1,8 @@
 // Copyright 2022-present 650 Industries. All rights reserved.
 
+@_implementationOnly import ExpoModulesCoreCxx
+import ExpoModulesCoreJSI
+
 /**
  Type of the IDs of shared objects.
  */
@@ -53,9 +56,9 @@ public final class SharedObjectRegistry {
   /**
    Shared object releaser that is common to all instances.
    */
-  private lazy var objectReleaser: (SharedObjectId) -> Void = { [weak self] objectId in
-    self?.delete(objectId)
-  }
+//  private lazy var objectReleaser = expo.SharedObject.SwiftCxxObjectReleaserCallback { objectId in
+//    self.delete(objectId)
+//  }
 
   /**
    The default initializer that takes the app context.
@@ -103,7 +106,12 @@ public final class SharedObjectRegistry {
 
     // Set the native state in the JS object.
     if let runtime = try? appContext?.runtime {
-      SharedObjectUtils.setNativeState(jsObject, runtime: runtime, objectId: id, releaser: objectReleaser)
+//      let nativeState = expo.SharedObject.NativeState.makeShared(id) { objectId in
+//        self.delete(objectId)
+//      }
+//      var rt = runtime.get()
+//      jsObject.ptr.setNativeState(&rt, nativeState)
+//      SharedObjectUtils.setNativeState(jsObject, runtime: runtime, objectId: id, releaser: objectReleaser)
     }
 
     // Save the pair in the dictionary.

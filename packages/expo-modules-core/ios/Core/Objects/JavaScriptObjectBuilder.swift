@@ -1,5 +1,7 @@
 // Copyright 2022-present 650 Industries. All rights reserved.
 
+import ExpoModulesCoreJSI
+
 /**
  A type that can decorate a `JavaScriptObject` with some properties.
  */

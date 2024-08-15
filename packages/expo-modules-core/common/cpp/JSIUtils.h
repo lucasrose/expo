@@ -71,6 +71,12 @@ void defineProperty(jsi::Runtime &runtime, jsi::Object *object, const char *name
  */
 void defineProperty(jsi::Runtime &runtime, jsi::Object *object, const char *name, jsi::Object descriptor);
 
+#pragma mark - WeakRef
+
+bool isWeakRefSupported(jsi::Runtime &runtime);
+jsi::Object createWeakRef(jsi::Runtime &runtime, jsi::Object &object);
+jsi::Value derefWeakRef(jsi::Runtime &runtime, jsi::Object &object);
+
 } // namespace expo::common
 
 #endif // __cplusplus

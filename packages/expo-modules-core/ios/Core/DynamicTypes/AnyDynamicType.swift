@@ -1,5 +1,7 @@
 // Copyright 2021-present 650 Industries. All rights reserved.
 
+import ExpoModulesCoreJSI
+
 /**
  A protocol whose intention is to wrap any type
  to keep its real signature and not type-erase it by the compiler.
@@ -31,7 +33,8 @@ public protocol AnyDynamicType: CustomStringConvertible {
 
 extension AnyDynamicType {
   func cast(jsValue: JavaScriptValue, appContext: AppContext) throws -> Any {
-    return jsValue.getRaw()
+//    return jsValue.getRaw()
+    fatalError()
   }
 
   func cast<ValueType>(_ value: ValueType, appContext: AppContext) throws -> Any {

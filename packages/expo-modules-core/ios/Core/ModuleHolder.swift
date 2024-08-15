@@ -1,4 +1,5 @@
 import Dispatch
+import ExpoModulesCoreJSI
 
 /**
  Holds a reference to the module instance and caches its definition.

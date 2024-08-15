@@ -64,6 +64,7 @@ Pod::Spec.new do |s|
   end
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
+    'SWIFT_OBJC_INTEROP_MODE' => 'objcxx',
     'CLANG_CXX_LANGUAGE_STANDARD' => 'c++20',
     'HEADER_SEARCH_PATHS' => header_search_paths.join(' '),
   }
@@ -80,6 +81,7 @@ Pod::Spec.new do |s|
     # Swift/Objective-C compatibility
     safearea.pod_target_xcconfig = {
       'DEFINES_MODULE' => 'YES',
+      'SWIFT_OBJC_INTEROP_MODE' => 'objcxx',
       'SWIFT_COMPILATION_MODE' => 'wholemodule'
     }
     if File.exist?("vendored/react-native-safe-area-context/dev-menu-react-native-safe-area-context.xcframework") && Gem::Version.new(Pod::VERSION) >= Gem::Version.new('1.10.0')

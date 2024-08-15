@@ -1,5 +1,8 @@
 // Copyright 2024-present 650 Industries. All rights reserved.
 
+@_implementationOnly import ExpoModulesCoreCxx
+import ExpoModulesCoreJSI
+
 public final class LegacyEventEmitterCompat: EXEventEmitterService {
   internal weak var appContext: AppContext?
 

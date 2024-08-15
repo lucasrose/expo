@@ -6,8 +6,14 @@
 
 // Some headers needs to be imported from Objective-C code too.
 // Otherwise they won't be visible in `ExpoModulesCore-Swift.h`.
-#import <React/RCTView.h>
+//#import <React/RCTView.h>
 
-#if __has_include(<ExpoModulesCore/ExpoModulesCore-umbrella.h>)
-#import <ExpoModulesCore/ExpoModulesCore-umbrella.h>
-#endif
+//#ifdef __cplusplus
+//#import <jsi/jsi.h>
+//#import <ReactCommon/RuntimeExecutor.h>
+//#import <ReactCommon/CallInvoker.h>
+//#endif
+
+//#if __has_include(<ExpoModulesCore/ExpoModulesCore-umbrella.h>)
+//#import <ExpoModulesCore/ExpoModulesCore-umbrella.h>
+//#endif

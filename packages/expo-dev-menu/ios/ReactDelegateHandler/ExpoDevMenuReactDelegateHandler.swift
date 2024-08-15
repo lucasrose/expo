@@ -1,6 +1,6 @@
 // Copyright 2022-present 650 Industries. All rights reserved.
 
-import React
+@_implementationOnly import React
 import ExpoModulesCore
 
 @objc

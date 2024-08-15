@@ -1,4 +1,4 @@
-import ExpoModulesCore
+@_implementationOnly import ExpoModulesCore
 
 public class SymbolModule: Module {
   public func definition() -> ModuleDefinition {

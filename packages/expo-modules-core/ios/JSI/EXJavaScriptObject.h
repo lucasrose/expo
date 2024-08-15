@@ -4,7 +4,7 @@
 
 #ifdef __cplusplus
 #import <jsi/jsi.h>
-
+namespace facebook::jsi {};
 namespace jsi = facebook::jsi;
 #endif // __cplusplus
 
@@ -35,7 +35,7 @@ NS_SWIFT_NAME(JavaScriptObject)
 
 // Some parts of the interface must be hidden for Swift – it can't import any C++ code.
 #ifdef __cplusplus
-- (nonnull instancetype)initWith:(std::shared_ptr<jsi::Object>)jsObjectPtr
+- (nonnull instancetype)initWith:(std::shared_ptr<facebook::jsi::Object>)jsObjectPtr
                          runtime:(nonnull EXJavaScriptRuntime *)runtime;
 
 /**

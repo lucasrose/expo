@@ -55,6 +55,10 @@ void* TypedArray::getRawPointer(jsi::Runtime &runtime) {
   return reinterpret_cast<void *>(getBuffer(runtime).data(runtime) + byteOffset(runtime));
 }
 
+jsi::Object TypedArray::toObject(jsi::Runtime &runtime) const {
+  return jsi::Value(runtime, this).getObject(runtime);
+}
+
 bool isTypedArray(jsi::Runtime &runtime, const jsi::Object &jsObj) {
   jsi::Object ArrayBuffer = runtime
     .global()
