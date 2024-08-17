@@ -1,6 +1,9 @@
 {
-  "platforms": ["apple", "android"],
+  "platforms": [
+    "apple",
+    "android"
+  ],
   "apple": {
-    "podspecPath": "./ExpoModulesCore.podspec"
+    "podspecPath": "./ios/ExpoModulesCoreJSI.podspec"
   }
 }

@@ -42,37 +42,35 @@ Pod::Spec.new do |s|
     'USE_HEADERMAP' => 'YES',
     'DEFINES_MODULE' => 'YES',
     'CLANG_CXX_LANGUAGE_STANDARD' => 'c++20',
-    'SWIFT_OBJC_INTEROP_MODE' => 'objcxx',
+    # 'SWIFT_OBJC_INTEROP_MODE' => 'objcxx',
     'HEADER_SEARCH_PATHS' => header_search_paths.join(' '),
     'OTHER_SWIFT_FLAGS' => "$(inherited) #{fabric_enabled ? fabric_compiler_flags : ''} -Xcc -D -Xcc FOLLY_NO_CONFIG -Xcc -D -Xcc FOLLY_MOBILE=1 -Xcc -D -Xcc FOLLY_USE_LIBCPP=1 -Xcc -D -Xcc FOLLY_CFG_NO_COROUTINES=1"
   }
-  # user_header_search_paths = [
-  #   '"${PODS_CONFIGURATION_BUILD_DIR}/ExpoModulesCore/Swift Compatibility Header"',
-  #   '"$(PODS_ROOT)/Headers/Private/Yoga"', # Expo.h -> ExpoModulesCore-umbrella.h -> Fabric ViewProps.h -> Private Yoga headers
-  # ]
-  # s.user_target_xcconfig = {
-  #   "HEADER_SEARCH_PATHS" => user_header_search_paths,
-  # }
+  user_header_search_paths = [
+    '"${PODS_CONFIGURATION_BUILD_DIR}/ExpoModulesCore/Swift Compatibility Header"',
+    '"$(PODS_ROOT)/Headers/Private/Yoga"', # Expo.h -> ExpoModulesCore-umbrella.h -> Fabric ViewProps.h -> Private Yoga headers
+  ]
+  s.user_target_xcconfig = {
+    "HEADER_SEARCH_PATHS" => user_header_search_paths,
+  }
 
   compiler_flags = folly_compiler_flags + ' ' + "-DREACT_NATIVE_TARGET_VERSION=#{reactNativeTargetVersion}"
-  # if ENV['USE_HERMES'] == nil || ENV['USE_HERMES'] == '1'
-  #   compiler_flags += ' -DUSE_HERMES'
-  #   s.dependency 'hermes-engine'
-  #   add_dependency(s, "React-jsinspector", :framework_name => 'jsinspector_modern')
-  # else
-  #   s.dependency 'React-jsc'
-  # end
+  if ENV['USE_HERMES'] == nil || ENV['USE_HERMES'] == '1'
+    compiler_flags += ' -DUSE_HERMES'
+    s.dependency 'hermes-engine'
+    add_dependency(s, "React-jsinspector", :framework_name => 'jsinspector_modern')
+  else
+    s.dependency 'React-jsc'
+  end
 
-  s.dependency 'ExpoModulesCoreSwift'
-  s.dependency 'ExpoModulesCoreCxx'
   s.dependency 'ExpoModulesCoreJSI'
 
-  # if fabric_enabled
-  #   compiler_flags << ' ' << fabric_compiler_flags
+  if fabric_enabled
+    compiler_flags << ' ' << fabric_compiler_flags
 
-  #   s.dependency 'React-RCTFabric'
-  #   s.dependency 'RCT-Folly', folly_version
-  # end
+    s.dependency 'React-RCTFabric'
+    s.dependency 'RCT-Folly', folly_version
+  end
 
   unless defined?(install_modules_dependencies)
     # `install_modules_dependencies` is defined from react_native_pods.rb.
@@ -81,16 +79,22 @@ Pod::Spec.new do |s|
   end
   install_modules_dependencies(s)
 
-  # if !$ExpoUseSources&.include?(package['name']) && ENV['EXPO_USE_SOURCE'].to_i == 0 && File.exist?("ios/#{s.name}.xcframework") && Gem::Version.new(Pod::VERSION) >= Gem::Version.new('1.10.0')
-  #   s.source_files = 'ios/**/*.h', 'common/cpp/**/*.h'
-  #   s.vendored_frameworks = "ios/#{s.name}.xcframework"
-  # else
-    s.source_files = ['ExpoModulesCore.swift']
-  # end
+  if !$ExpoUseSources&.include?(package['name']) && ENV['EXPO_USE_SOURCE'].to_i == 0 && File.exist?("ios/#{s.name}.xcframework") && Gem::Version.new(Pod::VERSION) >= Gem::Version.new('1.10.0')
+    s.source_files = 'ios/**/*.h', 'common/cpp/**/*.h'
+    s.vendored_frameworks = "ios/#{s.name}.xcframework"
+  else
+    s.source_files = 'ios/**/*.{h,m,mm,swift,cpp}', 'common/cpp/**/*.{h,cpp}'
+  end
 
-  # s.exclude_files = exclude_files
+  exclude_files = ['ios/Tests/', 'ios/JSI/', 'ios/JSI_dupa/']
+  if !fabric_enabled
+    exclude_files.append('ios/Fabric/')
+    exclude_files.append('common/cpp/fabric/')
+  end
+
+  s.exclude_files = exclude_files
   s.compiler_flags = compiler_flags
-  # s.private_header_files = ['ios/**/*+Private.h', 'ios/**/Swift.h']
+  s.private_header_files = ['ios/**/*+Private.h', 'ios/**/Swift.h']
 
   s.test_spec 'Tests' do |test_spec|
     test_spec.dependency 'ExpoModulesTestCore'

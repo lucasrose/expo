@@ -35,15 +35,14 @@ open class JavaScriptRuntime: NSObject {
     }
   }
 
-  internal init(runtime: expo.RuntimeSharedPtr, callInvoker: expo.CallInvokerSharedPtr) {
+  public init(runtime: expo.RuntimeSharedPtr, callInvoker: expo.CallInvokerSharedPtr) {
     self.runtime = runtime
     self.jsCallInvoker = callInvoker
   }
 
-  override public init() {
+  override convenience public init() {
     let runtime = expo.makeRuntime()
-    self.runtime = runtime
-    self.jsCallInvoker = expo.makeSharedTestingSyncJSCallInvoker(runtime)
+    self.init(runtime: runtime, callInvoker: expo.makeSharedTestingSyncJSCallInvoker(runtime))
   }
 
   func get() -> facebook.jsi.Runtime {

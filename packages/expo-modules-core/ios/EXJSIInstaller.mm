@@ -4,14 +4,14 @@
 //#import <ReactCommon/RCTRuntimeExecutor.h>
 //#endif // React Native >=0.74
 //
-//#import <ExpoModulesCoreCxx/EXJSIInstaller.h>
-////#import <ExpoModulesCoreCxx/EXJavaScriptRuntime.h>
-////#import <ExpoModulesCoreCxx/EXpoModulesHostObject.h>
-//#import <ExpoModulesCoreCxx/BridgelessJSCallInvoker.h>
-//#import <ExpoModulesCoreCxx/LazyObject.h>
-//#import <ExpoModulesCoreCxx/SharedObject.h>
-//#import <ExpoModulesCoreCxx/EventEmitter.h>
-//#import <ExpoModulesCoreCxx/NativeModule.h>
+//#import <ExpoModulesCore/EXJSIInstaller.h>
+////#import <ExpoModulesCore/EXJavaScriptRuntime.h>
+////#import <ExpoModulesCore/EXpoModulesHostObject.h>
+//#import <ExpoModulesCore/BridgelessJSCallInvoker.h>
+//#import <ExpoModulesCore/LazyObject.h>
+//#import <ExpoModulesCore/SharedObject.h>
+//#import <ExpoModulesCore/EventEmitter.h>
+//#import <ExpoModulesCore/NativeModule.h>
 ////#import <ExpoModulesCore/Swift.h>
 //
 //namespace jsi = facebook::jsi;

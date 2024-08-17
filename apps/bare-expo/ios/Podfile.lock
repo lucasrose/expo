@@ -416,9 +416,7 @@ PODS:
     - React-Core
   - ExpoModulesCore (1.12.11):
     - DoubleConversion
-    - ExpoModulesCoreCxx
     - ExpoModulesCoreJSI
-    - ExpoModulesCoreSwift
     - glog
     - hermes-engine
     - RCT-Folly (= 2024.01.01.00)
@@ -430,49 +428,17 @@ PODS:
     - React-featureflags
     - React-graphics
     - React-ImageManager
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - Yoga
-  - ExpoModulesCore/Tests (1.12.11):
-    - DoubleConversion
-    - ExpoModulesCoreCxx
-    - ExpoModulesCoreJSI
-    - ExpoModulesCoreSwift
-    - ExpoModulesTestCore
-    - glog
-    - hermes-engine
-    - RCT-Folly (= 2024.01.01.00)
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - Yoga
-  - ExpoModulesCoreCxx (1.12.11):
-    - hermes-engine
-    - React-Core
     - React-jsinspector
     - React-NativeModulesApple
-    - React-RCTAppDelegate
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
+    - Yoga
   - ExpoModulesCoreJSI (1.12.11):
     - DoubleConversion
-    - ExpoModulesCoreCxx
     - glog
     - hermes-engine
     - RCT-Folly (= 2024.01.01.00)
@@ -486,32 +452,6 @@ PODS:
     - React-ImageManager
     - React-jsinspector
     - React-NativeModulesApple
-    - React-RCTAppDelegate
-    - React-RCTFabric
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - Yoga
-  - ExpoModulesCoreSwift (1.12.11):
-    - DoubleConversion
-    - ExpoModulesCoreCxx
-    - ExpoModulesCoreJSI
-    - glog
-    - hermes-engine
-    - RCT-Folly (= 2024.01.01.00)
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-jsinspector
-    - React-NativeModulesApple
-    - React-RCTAppDelegate
     - React-RCTFabric
     - React-rendererdebug
     - React-utils
@@ -2424,10 +2364,7 @@ DEPENDENCIES:
   - ExpoMediaLibrary (from `../../../packages/expo-media-library/ios`)
   - ExpoMediaLibrary/Tests (from `../../../packages/expo-media-library/ios`)
   - ExpoModulesCore (from `../../../packages/expo-modules-core`)
-  - ExpoModulesCore/Tests (from `../../../packages/expo-modules-core`)
-  - ExpoModulesCoreCxx (from `../../../packages/expo-modules-core`)
-  - ExpoModulesCoreJSI (from `../../../packages/expo-modules-core`)
-  - ExpoModulesCoreSwift (from `../../../packages/expo-modules-core`)
+  - ExpoModulesCoreJSI (from `../../../packages/expo-modules-core/ios`)
   - ExpoModulesTestCore (from `../../../packages/expo-modules-test-core/ios`)
   - ExpoNetwork (from `../../../packages/expo-network/ios`)
   - ExpoPrint (from `../../../packages/expo-print/ios`)
@@ -2694,14 +2631,9 @@ EXTERNAL SOURCES:
     inhibit_warnings: false
     :path: "../../../packages/expo-media-library/ios"
   ExpoModulesCore:
-    inhibit_warnings: false
-    :path: "../../../packages/expo-modules-core"
-  ExpoModulesCoreCxx:
     :path: "../../../packages/expo-modules-core"
   ExpoModulesCoreJSI:
-    :path: "../../../packages/expo-modules-core"
-  ExpoModulesCoreSwift:
-    :path: "../../../packages/expo-modules-core"
+    :path: "../../../packages/expo-modules-core/ios"
   ExpoModulesTestCore:
     :path: "../../../packages/expo-modules-test-core/ios"
   ExpoNetwork:
@@ -2976,10 +2908,8 @@ SPEC CHECKSUMS:
   ExpoMailComposer: 486fe4ef7951c108b1dbdcf70ae43f58a1273e5e
   ExpoMaps: 39a72d3e9b1d04df9f86210b19fb50d38cc3fbbc
   ExpoMediaLibrary: c6f38a81b448340f692f9a612efd86911b15409a
-  ExpoModulesCore: 18ca7041ecc3510d054ab076b1bf577112212c98
-  ExpoModulesCoreCxx: 7075d23f5b7157b5b842a711916ff22d4a2214ad
-  ExpoModulesCoreJSI: 49b72a76bbe1d762514cfdd0adefe5f96e439e48
-  ExpoModulesCoreSwift: 4dfbd91068290013c4f53db60d54311c1ac1fe89
+  ExpoModulesCore: de1d256e1f1b4f7120977ecf9fb3b3c1e15aecf0
+  ExpoModulesCoreJSI: a9a81c5b74baf27dfc78a7e6fc58725b932d7b7d
   ExpoModulesTestCore: ee7a0624d3de95925ebf4578bbacc43026b20f19
   ExpoNetwork: 4a27e8be63eb3bf26f1e1f1024129788452ae0e1
   ExpoPrint: e507306504f47d13795cf180cde2b578d9b03088
@@ -3096,6 +3026,6 @@ SPEC CHECKSUMS:
   Yoga: 59954e6c05f5ff952f65615322209c4ce9e3e1d3
   ZXingObjC: 8898711ab495761b2dbbdec76d90164a6d7e14c5
 
-PODFILE CHECKSUM: 5ae1d8bc2c65cc3c2b79bb6e44f12931b985ac3e
+PODFILE CHECKSUM: f105c091b68d84465a9efdab6df52e1db2a51d93
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.14.3

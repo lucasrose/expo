@@ -12,7 +12,7 @@ import { Podspec } from '../CocoaPods';
 import { EXPOTOOLS_DIR, EXPO_GO_IOS_DIR } from '../Constants';
 import { arrayize, spawnAsync } from '../Utils';
 
-const PODS_DIR = path.join(EXPO_GO_IOS_DIR, 'Pods');
+const PODS_DIR = path.join(EXPO_GO_IOS_DIR.replace('expo-go', 'bare-expo'), 'Pods');
 const PODS_PUBLIC_HEADERS_DIR = path.join(PODS_DIR, 'Headers', 'Public');
 const PODS_PRIVATE_HEADERS_DIR = path.join(PODS_DIR, 'Headers', 'Private');
 const PLATFORMS_MAPPING: Record<string, ProjectSpecPlatform> = {
@@ -65,7 +65,7 @@ export async function createSpecFromPodspecAsync(
   );
 
   const dependenciesNames = podspec.dependencies ? Object.keys(podspec.dependencies) : [];
-
+  console.log({ dependenciesNames });
   const dependencies = (
     await Promise.all(dependenciesNames.map((dependencyName) => dependencyResolver(dependencyName)))
   ).filter(Boolean) as ProjectSpecDependency[];
@@ -83,12 +83,12 @@ export async function createSpecFromPodspecAsync(
             path: '',
             name: podspec.name,
             createIntermediateGroups: true,
-            includes: arrayize(podspec.source_files),
+            includes: [...arrayize(podspec.source_files), '**/*.modulemap'],
             excludes: [
-              INFO_PLIST_FILENAME,
+              `**/${INFO_PLIST_FILENAME}`,
               `${podspec.name}.spec.json`,
-              '*.xcodeproj',
-              '*.xcframework',
+              '**/*.xcodeproj',
+              '**/*.xcframework',
               '*.podspec',
               ...arrayize(podspec.exclude_files),
             ],
@@ -106,6 +106,7 @@ export async function createSpecFromPodspecAsync(
             MACH_O_TYPE: 'staticlib',
           }),
         },
+        scheme: {},
         info: {
           path: INFO_PLIST_FILENAME,
           properties: mergeXcodeConfigs(
@@ -130,6 +131,11 @@ export async function createSpecFromPodspecAsync(
         IPHONEOS_DEPLOYMENT_TARGET: podspec.platforms.ios,
         FRAMEWORK_SEARCH_PATHS: constructFrameworkSearchPaths(dependencies),
         HEADER_SEARCH_PATHS: constructHeaderSearchPaths(dependenciesNames),
+
+        // MODULEMAP_FILE: 'JSI/module.modulemap',
+        BUILD_LIBRARY_FOR_DISTRIBUTION: 'YES',
+        SWIFT_INSTALL_MODULE: 'YES',
+        SWIFT_INSTALL_OBJC_HEADER: 'NO',
 
         // Suppresses deprecation warnings coming from frameworks like OpenGLES.
         VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS: arrayize(podspec.frameworks).join(' '),
@@ -159,14 +165,19 @@ function constructHeaderSearchPaths(dependencies: string[]): string {
     ...dependencies,
 
     'DoubleConversion',
+    'fmt',
+    'glog',
+    'hermes-engine',
     'React-callinvoker',
     'React-Core',
     'React-cxxreact',
+    'React-Fabric',
+    'React-hermes',
     'React-jsi',
     'React-jsiexecutor',
     'React-jsinspector',
+    'React-runtimeexecutor',
     'Yoga',
-    'glog',
   ]);
 
   function headerSearchPathsForDir(dir: string): string {

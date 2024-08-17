@@ -129,6 +129,9 @@ export class Package {
     if (this.expoModuleConfig?.ios?.podspecPath) {
       return this.expoModuleConfig.ios.podspecPath;
     }
+    if (this.expoModuleConfig?.apple?.podspecPath) {
+      return this.expoModuleConfig.apple.podspecPath;
+    }
 
     // Obtain podspecName by looking for podspecs in both package's root directory and ios subdirectory.
     const [podspecPath] = glob.sync(`{*,${this.iosSubdirectory}/*}.podspec`, {

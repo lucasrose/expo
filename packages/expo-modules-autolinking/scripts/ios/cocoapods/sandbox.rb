@@ -51,15 +51,16 @@ module Pod
         spec_json['pod_target_xcconfig'] ||= {}
         spec_json['pod_target_xcconfig']['DEFINES_MODULE'] = 'YES'
         patched_spec = Specification.from_json(spec_json.to_json)
-      elsif name.starts_with?('Expo') && name != 'ExpoImage'
-        spec_json = JSON.parse(podspec.to_pretty_json)
-        spec_json['pod_target_xcconfig'] ||= {}
-        spec_json['pod_target_xcconfig']['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++20'
-        spec_json['pod_target_xcconfig']['SWIFT_OBJC_INTEROP_MODE'] = 'objcxx'
-        spec_json['pod_target_xcconfig']['OTHER_SWIFT_FLAGS'] ||= '$(inherited)'
-        spec_json['pod_target_xcconfig']['OTHER_SWIFT_FLAGS'] << ' -Xcc -D -Xcc FOLLY_NO_CONFIG -Xcc -D -Xcc FOLLY_MOBILE=1 -Xcc -D -Xcc FOLLY_USE_LIBCPP=1 -Xcc -D -Xcc FOLLY_CFG_NO_COROUTINES=1'
-        patched_spec = Specification.from_json(spec_json.to_json)
       end
+      # if name.starts_with?('Expo') && name != 'ExpoImage'
+      #   spec_json = JSON.parse(podspec.to_pretty_json)
+      #   spec_json['pod_target_xcconfig'] ||= {}
+      #   spec_json['pod_target_xcconfig']['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++20'
+      #   spec_json['pod_target_xcconfig']['SWIFT_OBJC_INTEROP_MODE'] = 'objcxx'
+      #   spec_json['pod_target_xcconfig']['OTHER_SWIFT_FLAGS'] ||= '$(inherited)'
+      #   spec_json['pod_target_xcconfig']['OTHER_SWIFT_FLAGS'] << ' -Xcc -D -Xcc FOLLY_NO_CONFIG -Xcc -D -Xcc FOLLY_MOBILE=1 -Xcc -D -Xcc FOLLY_USE_LIBCPP=1 -Xcc -D -Xcc FOLLY_CFG_NO_COROUTINES=1'
+      #   patched_spec = Specification.from_json(spec_json.to_json)
+      # end
 
       if patched_spec != nil
         # Store the patched spec with original checksum and local saved file path

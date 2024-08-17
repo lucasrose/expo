@@ -1,7 +1,5 @@
 // Copyright 2018-present 650 Industries. All rights reserved.
 
-@_implementationOnly import ExpoModulesCoreCxx
-
 /**
  An extensible react instance creation delegate. This class will loop through each `ExpoReactDelegateHandler` to determine the winner to create the instance.
  */

@@ -11,7 +11,7 @@ import {
 import XcodeProject from './XcodeProject';
 import { Flavor, Framework, XcodebuildSettings } from './XcodeProject.types';
 import { Podspec } from '../CocoaPods';
-import { EXPO_GO_IOS_DIR } from '../Constants';
+import { EXPO_GO_IOS_DIR, PACKAGES_DIR } from '../Constants';
 import logger from '../Logger';
 import { Package } from '../Packages';
 
@@ -74,6 +74,7 @@ export const PACKAGES_TO_PREBUILD = [
   // 'expo-video-thumbnails',
   // 'expo-web-browser',
   // 'unimodules-app-loader',
+  'expo-modules-core',
 ];
 
 export function canPrebuildPackage(pkg: Package): boolean {
@@ -110,6 +111,7 @@ export async function buildFrameworksForProjectAsync(
       archs: ['x86_64', 'arm64'],
     },
   ];
+  console.log(xcodeProject);
 
   // Builds frameworks from flavors.
   const frameworks: Framework[] = [];
@@ -161,6 +163,8 @@ export async function cleanTemporaryFilesAsync(xcodeProject: XcodeProject) {
  * Generates Xcode project based on the podspec of given package.
  */
 export async function generateXcodeProjectSpecAsync(pkg: Package): Promise<XcodeProject> {
+  process.env['EXPO_USE_SOURCE'] = '1';
+
   const podspec = await pkg.getPodspecAsync();
 
   if (!podspec) {
@@ -194,6 +198,7 @@ export async function generateXcodeProjectSpecFromPodspecAsync(
     }
     return null;
   });
+  console.log(JSON.stringify(spec, null, 2));
 
   const xcodeprojPath = await generateXcodeProjectAsync(dir, spec);
   return await XcodeProject.fromXcodeprojPathAsync(xcodeprojPath);
@@ -223,16 +228,25 @@ async function findFrameworkForProjectAsync(projectName: string): Promise<string
     projectName.replace(/\/+.*$/, ''), // FacebookSDK/* -> FacebookSDK
   ]);
 
-  for (const name of searchNames) {
-    const cwd = path.join(PODS_DIR, name);
+  const searchPaths = [
+    (name) => path.join(PODS_DIR.replace('expo-go', 'bare-expo'), name),
+    () => path.join(PACKAGES_DIR, 'expo-modules-core', 'common', 'cpp'),
+  ];
 
-    if (await fs.pathExists(cwd)) {
-      const paths = await glob(`**/*.framework`, {
-        cwd,
-      });
+  console.log(searchPaths);
 
-      if (paths.length > 0) {
-        return path.join(cwd, paths[0]);
+  for (const searchPath of searchPaths) {
+    for (const name of searchNames) {
+      const cwd = searchPath(name);
+
+      if (await fs.pathExists(cwd)) {
+        const paths = await glob(`**/*.{xcframework,framework}`, {
+          cwd,
+        });
+
+        if (paths.length > 0) {
+          return path.join(cwd, paths[0]);
+        }
       }
     }
   }

@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0009B28F753D924C2566386E /* TypedArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4A4DE3A73C16C11E14DA900 /* TypedArray.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		026997CE2ECC4F0AE31178FA /* TestingSyncJSCallInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = 05A0CBE9FEC846F1FAEC9E4D /* TestingSyncJSCallInvoker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0348749BAD1AB05FE51A1D9D /* LazyObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44809363595111CDE00081E /* LazyObject.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		0C411F9215CB6A1EFBE3FB80 /* ObjectDeallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 74C7638471C0D2952059E983 /* ObjectDeallocator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		131AB7C3AF104A6EC14BC37F /* SharedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 8735D09D0546F9EF57356533 /* SharedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18B8D95BA48903380383CB3F /* JSIUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 937174771AABB53955760520 /* JSIUtils.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		1CB9252F59255F1BEF72B4CF /* NativeModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8078D7F48B36DAD1DEE3C830 /* NativeModule.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		1EB4B7F254F3D2420A98984E /* SharedObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FC164E4F1C0389CB67DFF6E /* SharedObject.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		20D9831E685D7387B0253D10 /* JSIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE8E1BB64E53E792301902 /* JSIUtils.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		213540583166EBD40341D872 /* SharedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 8735D09D0546F9EF57356533 /* SharedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21C697DE4809746A2C72E6ED /* NativeModule.h in Headers */ = {isa = PBXBuildFile; fileRef = A288006F6BEEB9DEC3E2A6C0 /* NativeModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2274DC878B2EBD9C4F86CC63 /* NativeModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8078D7F48B36DAD1DEE3C830 /* NativeModule.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		2A75571BECD9671D19BEA00A /* JavaScriptTypedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E7625ACA2EBF7ADD58F3F6 /* JavaScriptTypedArray.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		3220AF0E75CF342951EF8563 /* JavaScriptValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E89776ACB953AB30A1A4124 /* JavaScriptValue.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		334A0F00EA90D086CFF0498E /* JSIUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EFE60A8DF957F1C8562DEAC5 /* JSIUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34D2431DFBA04A1E1BB34794 /* SharedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 8735D09D0546F9EF57356533 /* SharedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36AAD568FF1DEE57A11B8E3C /* JavaScriptRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC66BACAABBBBFF46E8D5A3 /* JavaScriptRuntime.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		36B40494BBE6C8BAB465ED27 /* LazyObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44809363595111CDE00081E /* LazyObject.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		39039C9B47E162DE45D4C37B /* AppleCxxInteropUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9756619866391CD15981FA80 /* AppleCxxInteropUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AF167CAC69880BCFEACE811 /* JavaScriptObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AB56FD97F39373BAB58AE /* JavaScriptObject.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		3B615B3913DA2D183A139AE7 /* NativeModule.h in Headers */ = {isa = PBXBuildFile; fileRef = A288006F6BEEB9DEC3E2A6C0 /* NativeModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		416BB258B620CA53C2606A9C /* JSIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE8E1BB64E53E792301902 /* JSIUtils.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		43129C7290B160CF4D6BCBF3 /* TypedArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4A4DE3A73C16C11E14DA900 /* TypedArray.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		455AD98032D2023A573203F9 /* JavaScriptTypedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E7625ACA2EBF7ADD58F3F6 /* JavaScriptTypedArray.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		49205A6465B0FB67E5F3996E /* EventEmitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF3051FA9B5ACEEE57AD4976 /* EventEmitter.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		495C5484DAAC383AB9616CE1 /* SharedObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FC164E4F1C0389CB67DFF6E /* SharedObject.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		4D211CB5E3AE313667A7D176 /* SharedObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FC164E4F1C0389CB67DFF6E /* SharedObject.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		4E67468D16306CC76A60FA20 /* JavaScriptRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC66BACAABBBBFF46E8D5A3 /* JavaScriptRuntime.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		5198C2A6D41830F207BB06F1 /* EventEmitter.h in Headers */ = {isa = PBXBuildFile; fileRef = F3DA6D3E363FAB116488C7B6 /* EventEmitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52E1423B593858110754993C /* JavaScriptTypedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E7625ACA2EBF7ADD58F3F6 /* JavaScriptTypedArray.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		541632F6DC783E669E6F8237 /* ObjectDeallocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EDB0A9CE7DB369C0D80A5F /* ObjectDeallocator.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		5A1FFA1D2DB41FBEA626E4C3 /* EventEmitter.h in Headers */ = {isa = PBXBuildFile; fileRef = F3DA6D3E363FAB116488C7B6 /* EventEmitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A64D15177BF5B31050B67A2 /* ObjectDeallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 74C7638471C0D2952059E983 /* ObjectDeallocator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60F93FE6626D1B31916FE2E9 /* JSIUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 937174771AABB53955760520 /* JSIUtils.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		6386C4D133348823615B9F2D /* ExpoModulesCoreJSI.h in Headers */ = {isa = PBXBuildFile; fileRef = A67F4021D0DAA2FAB6140107 /* ExpoModulesCoreJSI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66D5570AE51FFD1ECA49C93B /* JavaScriptObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AB56FD97F39373BAB58AE /* JavaScriptObject.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		6AF95A7FAB7D689AC5D223A5 /* ExpoModulesCoreJSI.h in Headers */ = {isa = PBXBuildFile; fileRef = A67F4021D0DAA2FAB6140107 /* ExpoModulesCoreJSI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6FE32AD53E6C4EA89D93EC7F /* AppleCxxInteropUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9756619866391CD15981FA80 /* AppleCxxInteropUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73B726B199F21851F13B8B96 /* EventEmitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF3051FA9B5ACEEE57AD4976 /* EventEmitter.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		77F858EBE68E10532D443624 /* LazyObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B85E55E0EB536B885A0724C7 /* LazyObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8183E46EB4711F85A36B970C /* JavaScriptObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AB56FD97F39373BAB58AE /* JavaScriptObject.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		89A088B97C24A01DC888A6D4 /* JSIUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 937174771AABB53955760520 /* JSIUtils.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		8A3BF31E92B14672CE31F8A7 /* TypedArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D460ED72ECC74533A42DA70 /* TypedArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A70EF20A7E06C14994E59DA /* BridgelessJSCallInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = 798EAB9C80BE0EE0159CC456 /* BridgelessJSCallInvoker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FE88F59D1304156F9144688 /* ObjectDeallocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EDB0A9CE7DB369C0D80A5F /* ObjectDeallocator.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		927B6FF6938519B0C28EE64A /* LazyObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B85E55E0EB536B885A0724C7 /* LazyObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95882175F95BE439A673CAFB /* TypedArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D460ED72ECC74533A42DA70 /* TypedArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A305BA20CBC808B77BADED4 /* LazyObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44809363595111CDE00081E /* LazyObject.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		9D23AF5D6650D188352E57A4 /* JavaScriptValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E89776ACB953AB30A1A4124 /* JavaScriptValue.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		9E93AB9A9FE19D379DA69F20 /* EventEmitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF3051FA9B5ACEEE57AD4976 /* EventEmitter.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		A4939DC4E599954A25352B57 /* TestingSyncJSCallInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = 05A0CBE9FEC846F1FAEC9E4D /* TestingSyncJSCallInvoker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A526E9BE035A4A629D0F0166 /* JavaScriptRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC66BACAABBBBFF46E8D5A3 /* JavaScriptRuntime.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		AC3D2B4E1064A732964B5B88 /* TypedArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D460ED72ECC74533A42DA70 /* TypedArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5E2AF430AEE879461C40120 /* JavaScriptWeakObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79B95AA101B54E17227086 /* JavaScriptWeakObject.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		B7144A11EADF187A058B3F07 /* JSIUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EFE60A8DF957F1C8562DEAC5 /* JSIUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9EC678EEFB465B735C9B810 /* JSIUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EFE60A8DF957F1C8562DEAC5 /* JSIUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C120C374562B4CFB8AA8F048 /* NativeModule.h in Headers */ = {isa = PBXBuildFile; fileRef = A288006F6BEEB9DEC3E2A6C0 /* NativeModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7881E7DA99D164CA556FD80 /* JSIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE8E1BB64E53E792301902 /* JSIUtils.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		C86A0D3FD9DD425179D6920C /* JavaScriptWeakObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79B95AA101B54E17227086 /* JavaScriptWeakObject.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		C90424005768832DFB51B6A6 /* JavaScriptWeakObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79B95AA101B54E17227086 /* JavaScriptWeakObject.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		CBDFC55EA500C8A5CB2DDD8D /* BridgelessJSCallInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = 798EAB9C80BE0EE0159CC456 /* BridgelessJSCallInvoker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCF52DE7228D6F21D036D960 /* ExpoModulesCoreJSI.h in Headers */ = {isa = PBXBuildFile; fileRef = A67F4021D0DAA2FAB6140107 /* ExpoModulesCoreJSI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD6983922EDEDCDBBBC0A066 /* ObjectDeallocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92EDB0A9CE7DB369C0D80A5F /* ObjectDeallocator.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		D5D81F53E821E4A6C0F47430 /* EventEmitter.h in Headers */ = {isa = PBXBuildFile; fileRef = F3DA6D3E363FAB116488C7B6 /* EventEmitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC7ADAE5B2962579627233BF /* BridgelessJSCallInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = 798EAB9C80BE0EE0159CC456 /* BridgelessJSCallInvoker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E140A5DD0B90DA912D8106FE /* AppleCxxInteropUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9756619866391CD15981FA80 /* AppleCxxInteropUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5BD0AF3FA3352C2AA84533D /* ObjectDeallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 74C7638471C0D2952059E983 /* ObjectDeallocator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED7F9B295FC97BD2B00B4CBD /* LazyObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B85E55E0EB536B885A0724C7 /* LazyObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE9997B4D321D1E189B12B93 /* TypedArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4A4DE3A73C16C11E14DA900 /* TypedArray.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		F6C7F57F7EE0FCDDBA132A90 /* NativeModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8078D7F48B36DAD1DEE3C830 /* NativeModule.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		F6FB5924EE95786710A71393 /* JavaScriptValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E89776ACB953AB30A1A4124 /* JavaScriptValue.swift */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32 -DREACT_NATIVE_TARGET_VERSION=75 -DUSE_HERMES"; }; };
+		F8FE18E502D343FB3415F398 /* TestingSyncJSCallInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = 05A0CBE9FEC846F1FAEC9E4D /* TestingSyncJSCallInvoker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		015906B0C0E416E8B94B943F /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		05A0CBE9FEC846F1FAEC9E4D /* TestingSyncJSCallInvoker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestingSyncJSCallInvoker.h; sourceTree = "<group>"; };
+		1390DC11917A5D8F36F95568 /* ExpoModulesCoreJSI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpoModulesCoreJSI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E89776ACB953AB30A1A4124 /* JavaScriptValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptValue.swift; sourceTree = "<group>"; };
+		2ACE8E1BB64E53E792301902 /* JSIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSIUtils.swift; sourceTree = "<group>"; };
+		3FC164E4F1C0389CB67DFF6E /* SharedObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SharedObject.cpp; sourceTree = "<group>"; };
+		43292A4D6BBAC7FB8592C6D2 /* hermes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = hermes.xcframework; path = "../../../apps/bare-expo/ios/Pods/hermes-engine/destroot/Library/Frameworks/universal/hermes.xcframework"; sourceTree = "<group>"; };
+		74C7638471C0D2952059E983 /* ObjectDeallocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectDeallocator.h; sourceTree = "<group>"; };
+		798EAB9C80BE0EE0159CC456 /* BridgelessJSCallInvoker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgelessJSCallInvoker.h; sourceTree = "<group>"; };
+		8078D7F48B36DAD1DEE3C830 /* NativeModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NativeModule.cpp; sourceTree = "<group>"; };
+		8735D09D0546F9EF57356533 /* SharedObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedObject.h; sourceTree = "<group>"; };
+		8C91FB09126B75CAF122DD56 /* ExpoModulesCoreJSI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpoModulesCoreJSI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92EDB0A9CE7DB369C0D80A5F /* ObjectDeallocator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectDeallocator.cpp; sourceTree = "<group>"; };
+		937174771AABB53955760520 /* JSIUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = JSIUtils.cpp; sourceTree = "<group>"; };
+		9756619866391CD15981FA80 /* AppleCxxInteropUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppleCxxInteropUtils.h; sourceTree = "<group>"; };
+		9D460ED72ECC74533A42DA70 /* TypedArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypedArray.h; sourceTree = "<group>"; };
+		A288006F6BEEB9DEC3E2A6C0 /* NativeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeModule.h; sourceTree = "<group>"; };
+		A67F4021D0DAA2FAB6140107 /* ExpoModulesCoreJSI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpoModulesCoreJSI.h; sourceTree = "<group>"; };
+		AF1AB56FD97F39373BAB58AE /* JavaScriptObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptObject.swift; sourceTree = "<group>"; };
+		B4CA763FFC41A008936CF108 /* ExpoModulesCoreJSI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpoModulesCoreJSI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B85E55E0EB536B885A0724C7 /* LazyObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LazyObject.h; sourceTree = "<group>"; };
+		BF3051FA9B5ACEEE57AD4976 /* EventEmitter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EventEmitter.cpp; sourceTree = "<group>"; };
+		C5E7625ACA2EBF7ADD58F3F6 /* JavaScriptTypedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptTypedArray.swift; sourceTree = "<group>"; };
+		D4A4DE3A73C16C11E14DA900 /* TypedArray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TypedArray.cpp; sourceTree = "<group>"; };
+		E44809363595111CDE00081E /* LazyObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LazyObject.cpp; sourceTree = "<group>"; };
+		ECC66BACAABBBBFF46E8D5A3 /* JavaScriptRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptRuntime.swift; sourceTree = "<group>"; };
+		EF79B95AA101B54E17227086 /* JavaScriptWeakObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptWeakObject.swift; sourceTree = "<group>"; };
+		EFE60A8DF957F1C8562DEAC5 /* JSIUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSIUtils.h; sourceTree = "<group>"; };
+		F3DA6D3E363FAB116488C7B6 /* EventEmitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventEmitter.h; sourceTree = "<group>"; };
+		FA5B212C74262FB23B9FC042 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3BA005C153995E186BFF7D66 = {
+			isa = PBXGroup;
+			children = (
+				4D687D40E15E4146627E0FCC /* JSI */,
+				D9C717F2A8B2345D9295A2B6 /* JSI_dupa */,
+				EB018870A864F18335E1426B /* Frameworks */,
+				AA26E0A08A322C5A04027122 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D687D40E15E4146627E0FCC /* JSI */ = {
+			isa = PBXGroup;
+			children = (
+				9756619866391CD15981FA80 /* AppleCxxInteropUtils.h */,
+				798EAB9C80BE0EE0159CC456 /* BridgelessJSCallInvoker.h */,
+				BF3051FA9B5ACEEE57AD4976 /* EventEmitter.cpp */,
+				F3DA6D3E363FAB116488C7B6 /* EventEmitter.h */,
+				A67F4021D0DAA2FAB6140107 /* ExpoModulesCoreJSI.h */,
+				AF1AB56FD97F39373BAB58AE /* JavaScriptObject.swift */,
+				ECC66BACAABBBBFF46E8D5A3 /* JavaScriptRuntime.swift */,
+				C5E7625ACA2EBF7ADD58F3F6 /* JavaScriptTypedArray.swift */,
+				1E89776ACB953AB30A1A4124 /* JavaScriptValue.swift */,
+				EF79B95AA101B54E17227086 /* JavaScriptWeakObject.swift */,
+				937174771AABB53955760520 /* JSIUtils.cpp */,
+				EFE60A8DF957F1C8562DEAC5 /* JSIUtils.h */,
+				2ACE8E1BB64E53E792301902 /* JSIUtils.swift */,
+				E44809363595111CDE00081E /* LazyObject.cpp */,
+				B85E55E0EB536B885A0724C7 /* LazyObject.h */,
+				015906B0C0E416E8B94B943F /* module.modulemap */,
+				8078D7F48B36DAD1DEE3C830 /* NativeModule.cpp */,
+				A288006F6BEEB9DEC3E2A6C0 /* NativeModule.h */,
+				92EDB0A9CE7DB369C0D80A5F /* ObjectDeallocator.cpp */,
+				74C7638471C0D2952059E983 /* ObjectDeallocator.h */,
+				3FC164E4F1C0389CB67DFF6E /* SharedObject.cpp */,
+				8735D09D0546F9EF57356533 /* SharedObject.h */,
+				05A0CBE9FEC846F1FAEC9E4D /* TestingSyncJSCallInvoker.h */,
+				D4A4DE3A73C16C11E14DA900 /* TypedArray.cpp */,
+				9D460ED72ECC74533A42DA70 /* TypedArray.h */,
+			);
+			path = JSI;
+			sourceTree = "<group>";
+		};
+		AA26E0A08A322C5A04027122 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4CA763FFC41A008936CF108 /* ExpoModulesCoreJSI.framework */,
+				8C91FB09126B75CAF122DD56 /* ExpoModulesCoreJSI.framework */,
+				1390DC11917A5D8F36F95568 /* ExpoModulesCoreJSI.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9C717F2A8B2345D9295A2B6 /* JSI_dupa */ = {
+			isa = PBXGroup;
+			children = (
+				FA5B212C74262FB23B9FC042 /* module.modulemap */,
+			);
+			path = JSI_dupa;
+			sourceTree = "<group>";
+		};
+		EB018870A864F18335E1426B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43292A4D6BBAC7FB8592C6D2 /* hermes.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		"TEMP_120B2C53-C2B0-4488-8EC3-2FCF31A8DDAC" /* ExpoModulesCoreJSI */ = {
+			isa = PBXGroup;
+			children = (
+				D9C717F2A8B2345D9295A2B6 /* JSI_dupa */,
+				4D687D40E15E4146627E0FCC /* JSI */,
+			);
+			name = ExpoModulesCoreJSI;
+			path = ios;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		80B9D75C88F41D263EC4966F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FE32AD53E6C4EA89D93EC7F /* AppleCxxInteropUtils.h in Headers */,
+				CBDFC55EA500C8A5CB2DDD8D /* BridgelessJSCallInvoker.h in Headers */,
+				D5D81F53E821E4A6C0F47430 /* EventEmitter.h in Headers */,
+				CCF52DE7228D6F21D036D960 /* ExpoModulesCoreJSI.h in Headers */,
+				B9EC678EEFB465B735C9B810 /* JSIUtils.h in Headers */,
+				ED7F9B295FC97BD2B00B4CBD /* LazyObject.h in Headers */,
+				21C697DE4809746A2C72E6ED /* NativeModule.h in Headers */,
+				0C411F9215CB6A1EFBE3FB80 /* ObjectDeallocator.h in Headers */,
+				131AB7C3AF104A6EC14BC37F /* SharedObject.h in Headers */,
+				F8FE18E502D343FB3415F398 /* TestingSyncJSCallInvoker.h in Headers */,
+				AC3D2B4E1064A732964B5B88 /* TypedArray.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		877790B15D34216AAD50330E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E140A5DD0B90DA912D8106FE /* AppleCxxInteropUtils.h in Headers */,
+				8A70EF20A7E06C14994E59DA /* BridgelessJSCallInvoker.h in Headers */,
+				5198C2A6D41830F207BB06F1 /* EventEmitter.h in Headers */,
+				6386C4D133348823615B9F2D /* ExpoModulesCoreJSI.h in Headers */,
+				334A0F00EA90D086CFF0498E /* JSIUtils.h in Headers */,
+				77F858EBE68E10532D443624 /* LazyObject.h in Headers */,
+				C120C374562B4CFB8AA8F048 /* NativeModule.h in Headers */,
+				E5BD0AF3FA3352C2AA84533D /* ObjectDeallocator.h in Headers */,
+				213540583166EBD40341D872 /* SharedObject.h in Headers */,
+				A4939DC4E599954A25352B57 /* TestingSyncJSCallInvoker.h in Headers */,
+				95882175F95BE439A673CAFB /* TypedArray.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3EACFF23783406A9367C7E9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39039C9B47E162DE45D4C37B /* AppleCxxInteropUtils.h in Headers */,
+				DC7ADAE5B2962579627233BF /* BridgelessJSCallInvoker.h in Headers */,
+				5A1FFA1D2DB41FBEA626E4C3 /* EventEmitter.h in Headers */,
+				6AF95A7FAB7D689AC5D223A5 /* ExpoModulesCoreJSI.h in Headers */,
+				B7144A11EADF187A058B3F07 /* JSIUtils.h in Headers */,
+				927B6FF6938519B0C28EE64A /* LazyObject.h in Headers */,
+				3B615B3913DA2D183A139AE7 /* NativeModule.h in Headers */,
+				5A64D15177BF5B31050B67A2 /* ObjectDeallocator.h in Headers */,
+				34D2431DFBA04A1E1BB34794 /* SharedObject.h in Headers */,
+				026997CE2ECC4F0AE31178FA /* TestingSyncJSCallInvoker.h in Headers */,
+				8A3BF31E92B14672CE31F8A7 /* TypedArray.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		28F20005CED7A8EF0FF7E20E /* ExpoModulesCoreJSI_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81F3E1DFE5C5BF5AE54C7CB3 /* Build configuration list for PBXNativeTarget "ExpoModulesCoreJSI_macOS" */;
+			buildPhases = (
+				80B9D75C88F41D263EC4966F /* Headers */,
+				2E06F75B02BDD4A39B3C8A1A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExpoModulesCoreJSI_macOS;
+			productName = ExpoModulesCoreJSI_macOS;
+			productReference = 8C91FB09126B75CAF122DD56 /* ExpoModulesCoreJSI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9FDECBB0CDA60474AB43F5EC /* ExpoModulesCoreJSI_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70D54BD1FA0F271E54E1D730 /* Build configuration list for PBXNativeTarget "ExpoModulesCoreJSI_iOS" */;
+			buildPhases = (
+				B3EACFF23783406A9367C7E9 /* Headers */,
+				BEA80D57C8B7CCF6FE49B9CD /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExpoModulesCoreJSI_iOS;
+			productName = ExpoModulesCoreJSI_iOS;
+			productReference = B4CA763FFC41A008936CF108 /* ExpoModulesCoreJSI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ECC0CA5027ABA0D332F68A87 /* ExpoModulesCoreJSI_tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC5909DD31010FE3C49128A6 /* Build configuration list for PBXNativeTarget "ExpoModulesCoreJSI_tvOS" */;
+			buildPhases = (
+				877790B15D34216AAD50330E /* Headers */,
+				5E9082238AA7F521A45F2D43 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExpoModulesCoreJSI_tvOS;
+			productName = ExpoModulesCoreJSI_tvOS;
+			productReference = 1390DC11917A5D8F36F95568 /* ExpoModulesCoreJSI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0CD96842B418BDE94F8A4FA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = EF80E8DC8A55D83E16E94935 /* Build configuration list for PBXProject "ExpoModulesCoreJSI" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 3BA005C153995E186BFF7D66;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FDECBB0CDA60474AB43F5EC /* ExpoModulesCoreJSI_iOS */,
+				28F20005CED7A8EF0FF7E20E /* ExpoModulesCoreJSI_macOS */,
+				ECC0CA5027ABA0D332F68A87 /* ExpoModulesCoreJSI_tvOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E06F75B02BDD4A39B3C8A1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E93AB9A9FE19D379DA69F20 /* EventEmitter.cpp in Sources */,
+				18B8D95BA48903380383CB3F /* JSIUtils.cpp in Sources */,
+				C7881E7DA99D164CA556FD80 /* JSIUtils.swift in Sources */,
+				66D5570AE51FFD1ECA49C93B /* JavaScriptObject.swift in Sources */,
+				4E67468D16306CC76A60FA20 /* JavaScriptRuntime.swift in Sources */,
+				2A75571BECD9671D19BEA00A /* JavaScriptTypedArray.swift in Sources */,
+				F6FB5924EE95786710A71393 /* JavaScriptValue.swift in Sources */,
+				B5E2AF430AEE879461C40120 /* JavaScriptWeakObject.swift in Sources */,
+				9A305BA20CBC808B77BADED4 /* LazyObject.cpp in Sources */,
+				1CB9252F59255F1BEF72B4CF /* NativeModule.cpp in Sources */,
+				8FE88F59D1304156F9144688 /* ObjectDeallocator.cpp in Sources */,
+				495C5484DAAC383AB9616CE1 /* SharedObject.cpp in Sources */,
+				0009B28F753D924C2566386E /* TypedArray.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E9082238AA7F521A45F2D43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B726B199F21851F13B8B96 /* EventEmitter.cpp in Sources */,
+				60F93FE6626D1B31916FE2E9 /* JSIUtils.cpp in Sources */,
+				416BB258B620CA53C2606A9C /* JSIUtils.swift in Sources */,
+				3AF167CAC69880BCFEACE811 /* JavaScriptObject.swift in Sources */,
+				36AAD568FF1DEE57A11B8E3C /* JavaScriptRuntime.swift in Sources */,
+				455AD98032D2023A573203F9 /* JavaScriptTypedArray.swift in Sources */,
+				9D23AF5D6650D188352E57A4 /* JavaScriptValue.swift in Sources */,
+				C90424005768832DFB51B6A6 /* JavaScriptWeakObject.swift in Sources */,
+				36B40494BBE6C8BAB465ED27 /* LazyObject.cpp in Sources */,
+				F6C7F57F7EE0FCDDBA132A90 /* NativeModule.cpp in Sources */,
+				CD6983922EDEDCDBBBC0A066 /* ObjectDeallocator.cpp in Sources */,
+				4D211CB5E3AE313667A7D176 /* SharedObject.cpp in Sources */,
+				43129C7290B160CF4D6BCBF3 /* TypedArray.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEA80D57C8B7CCF6FE49B9CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49205A6465B0FB67E5F3996E /* EventEmitter.cpp in Sources */,
+				89A088B97C24A01DC888A6D4 /* JSIUtils.cpp in Sources */,
+				20D9831E685D7387B0253D10 /* JSIUtils.swift in Sources */,
+				8183E46EB4711F85A36B970C /* JavaScriptObject.swift in Sources */,
+				A526E9BE035A4A629D0F0166 /* JavaScriptRuntime.swift in Sources */,
+				52E1423B593858110754993C /* JavaScriptTypedArray.swift in Sources */,
+				3220AF0E75CF342951EF8563 /* JavaScriptValue.swift in Sources */,
+				C86A0D3FD9DD425179D6920C /* JavaScriptWeakObject.swift in Sources */,
+				0348749BAD1AB05FE51A1D9D /* LazyObject.cpp in Sources */,
+				2274DC878B2EBD9C4F86CC63 /* NativeModule.cpp in Sources */,
+				541632F6DC783E669E6F8237 /* ObjectDeallocator.cpp in Sources */,
+				1EB4B7F254F3D2420A98984E /* SharedObject.cpp in Sources */,
+				EE9997B4D321D1E189B12B93 /* TypedArray.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		33F52CCD93002E191498A6D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/hermes-engine/destroot/Library/Frameworks/universal\"",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Info-generated.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				OTHER_SWIFT_FLAGS = "$(inherited)  -Xcc -D -Xcc FOLLY_NO_CONFIG -Xcc -D -Xcc FOLLY_MOBILE=1 -Xcc -D -Xcc FOLLY_USE_LIBCPP=1 -Xcc -D -Xcc FOLLY_CFG_NO_COROUTINES=1";
+				PRODUCT_NAME = ExpoModulesCoreJSI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USE_HEADERMAP = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		7F3AE41CFA042BD290BAAC16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited) /Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/hermes-engine/destroot/Library/Frameworks/universal";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited) \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/hermes-engine\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-jsinspector\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-Core\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/ReactCommon/turbomodule/core\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/RCT-Folly\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/glog\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-RCTFabric\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/ReactCodegen\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/RCTRequired\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/RCTTypeSafety\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/ReactCommon/turbomodule/bridging\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-NativeModulesApple\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/Yoga\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-Fabric\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-graphics\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-utils\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-featureflags\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-debug\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-ImageManager\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-rendererdebug\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/DoubleConversion\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/fmt\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-callinvoker\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-cxxreact\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-hermes\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-jsi\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-jsiexecutor\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-runtimeexecutor\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/hermes-engine\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-jsinspector\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-Core\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/ReactCommon/turbomodule/core\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/RCT-Folly\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/glog\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-RCTFabric\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/ReactCodegen\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/RCTRequired\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/RCTTypeSafety\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/ReactCommon/turbomodule/bridging\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-NativeModulesApple\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/Yoga\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-Fabric\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-graphics\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-utils\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-featureflags\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-debug\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-ImageManager\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-rendererdebug\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/DoubleConversion\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/fmt\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-callinvoker\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-cxxreact\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-hermes\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-jsi\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-jsiexecutor\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-runtimeexecutor\"";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = .expo.modules.core.jsi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 15.1;
+				VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = "";
+			};
+			name = Release;
+		};
+		92CDD9956C99B56BEDD9DC45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/hermes-engine/destroot/Library/Frameworks/universal\"",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Info-generated.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				OTHER_SWIFT_FLAGS = "$(inherited)  -Xcc -D -Xcc FOLLY_NO_CONFIG -Xcc -D -Xcc FOLLY_MOBILE=1 -Xcc -D -Xcc FOLLY_USE_LIBCPP=1 -Xcc -D -Xcc FOLLY_CFG_NO_COROUTINES=1";
+				PRODUCT_NAME = ExpoModulesCoreJSI;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				USE_HEADERMAP = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		976B693F7733481296E8DAEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/hermes-engine/destroot/Library/Frameworks/universal\"",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Info-generated.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				OTHER_SWIFT_FLAGS = "$(inherited)  -Xcc -D -Xcc FOLLY_NO_CONFIG -Xcc -D -Xcc FOLLY_MOBILE=1 -Xcc -D -Xcc FOLLY_USE_LIBCPP=1 -Xcc -D -Xcc FOLLY_CFG_NO_COROUTINES=1";
+				PRODUCT_NAME = ExpoModulesCoreJSI;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				TARGETED_DEVICE_FAMILY = 3;
+				USE_HEADERMAP = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		CE1B319F42932E3CDA4EA57E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited) /Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/hermes-engine/destroot/Library/Frameworks/universal";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited) \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/hermes-engine\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-jsinspector\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-Core\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/ReactCommon/turbomodule/core\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/RCT-Folly\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/glog\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-RCTFabric\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/ReactCodegen\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/RCTRequired\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/RCTTypeSafety\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/ReactCommon/turbomodule/bridging\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-NativeModulesApple\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/Yoga\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-Fabric\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-graphics\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-utils\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-featureflags\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-debug\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-ImageManager\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-rendererdebug\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/DoubleConversion\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/fmt\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-callinvoker\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-cxxreact\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-hermes\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-jsi\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-jsiexecutor\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Public/React-runtimeexecutor\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/hermes-engine\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-jsinspector\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-Core\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/ReactCommon/turbomodule/core\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/RCT-Folly\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/glog\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-RCTFabric\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/ReactCodegen\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/RCTRequired\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/RCTTypeSafety\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/ReactCommon/turbomodule/bridging\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-NativeModulesApple\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/Yoga\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-Fabric\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-graphics\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-utils\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-featureflags\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-debug\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-ImageManager\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-rendererdebug\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/DoubleConversion\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/fmt\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-callinvoker\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-cxxreact\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-hermes\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-jsi\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-jsiexecutor\" \"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/Headers/Private/React-runtimeexecutor\"";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = .expo.modules.core.jsi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 15.1;
+				VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = "";
+			};
+			name = Debug;
+		};
+		D997A8B27E7A57C5E97203E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/hermes-engine/destroot/Library/Frameworks/universal\"",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Info-generated.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				OTHER_SWIFT_FLAGS = "$(inherited)  -Xcc -D -Xcc FOLLY_NO_CONFIG -Xcc -D -Xcc FOLLY_MOBILE=1 -Xcc -D -Xcc FOLLY_USE_LIBCPP=1 -Xcc -D -Xcc FOLLY_CFG_NO_COROUTINES=1";
+				PRODUCT_NAME = ExpoModulesCoreJSI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USE_HEADERMAP = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		DAC66E389A594D6D2FF967B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/hermes-engine/destroot/Library/Frameworks/universal\"",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Info-generated.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				OTHER_SWIFT_FLAGS = "$(inherited)  -Xcc -D -Xcc FOLLY_NO_CONFIG -Xcc -D -Xcc FOLLY_MOBILE=1 -Xcc -D -Xcc FOLLY_USE_LIBCPP=1 -Xcc -D -Xcc FOLLY_CFG_NO_COROUTINES=1";
+				PRODUCT_NAME = ExpoModulesCoreJSI;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				USE_HEADERMAP = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		FAE40E15C9BA9FD793CA7436 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Users/tomasz/Work/expo/apps/bare-expo/ios/Pods/hermes-engine/destroot/Library/Frameworks/universal\"",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Info-generated.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				OTHER_SWIFT_FLAGS = "$(inherited)  -Xcc -D -Xcc FOLLY_NO_CONFIG -Xcc -D -Xcc FOLLY_MOBILE=1 -Xcc -D -Xcc FOLLY_USE_LIBCPP=1 -Xcc -D -Xcc FOLLY_CFG_NO_COROUTINES=1";
+				PRODUCT_NAME = ExpoModulesCoreJSI;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				TARGETED_DEVICE_FAMILY = 3;
+				USE_HEADERMAP = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70D54BD1FA0F271E54E1D730 /* Build configuration list for PBXNativeTarget "ExpoModulesCoreJSI_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D997A8B27E7A57C5E97203E0 /* Debug */,
+				33F52CCD93002E191498A6D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		81F3E1DFE5C5BF5AE54C7CB3 /* Build configuration list for PBXNativeTarget "ExpoModulesCoreJSI_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAC66E389A594D6D2FF967B4 /* Debug */,
+				92CDD9956C99B56BEDD9DC45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DC5909DD31010FE3C49128A6 /* Build configuration list for PBXNativeTarget "ExpoModulesCoreJSI_tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				976B693F7733481296E8DAEA /* Debug */,
+				FAE40E15C9BA9FD793CA7436 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EF80E8DC8A55D83E16E94935 /* Build configuration list for PBXProject "ExpoModulesCoreJSI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE1B319F42932E3CDA4EA57E /* Debug */,
+				7F3AE41CFA042BD290BAAC16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0CD96842B418BDE94F8A4FA9 /* Project object */;
+}

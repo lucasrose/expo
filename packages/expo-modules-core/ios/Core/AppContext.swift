@@ -1,5 +1,4 @@
 @_implementationOnly import React
-@_implementationOnly import ExpoModulesCoreCxx
 import ExpoModulesCoreJSI
 
 /**

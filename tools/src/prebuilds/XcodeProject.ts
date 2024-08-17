@@ -94,7 +94,7 @@ export default class XcodeProject {
 
     // Remove `Headers` as each our module contains headers as part of the provided source code
     // and CocoaPods exposes them through HEADER_SEARCH_PATHS either way.
-    await fs.remove(path.join(frameworkPath, 'Headers'));
+    // await fs.remove(path.join(frameworkPath, 'Headers'));
 
     // `_CodeSignature` is apparently generated only for simulator, afaik we don't need it.
     await fs.remove(path.join(frameworkPath, '_CodeSignature'));

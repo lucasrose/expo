@@ -1,0 +1,8 @@
+framework module ExpoModulesCoreJSI {
+  umbrella header "ExpoModulesCoreJSI.h"
+
+  export *
+  module * {
+    export *
+  }
+}

@@ -1,6 +1,5 @@
 // Copyright 2022-present 650 Industries. All rights reserved.
 
-@_implementationOnly import ExpoModulesCoreCxx
 import ExpoModulesCoreJSI
 
 /**
@@ -183,7 +182,7 @@ public final class SharedObjectRegistry {
   }
 
   internal func clear() {
-    Self.lockQueue.async {
+    Self.lockQueue.sync {
       self.pairs.removeAll()
     }
   }

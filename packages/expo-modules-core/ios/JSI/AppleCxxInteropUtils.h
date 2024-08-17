@@ -9,12 +9,6 @@
 
 #if __has_include(<reacthermes/HermesExecutorFactory.h>)
 #import <reacthermes/HermesExecutorFactory.h>
-#elif __has_include(<React-jsc/JSCRuntime.h>)
-// react-native@>=0.71 has a specific React-jsc pod
-#import <React-jsc/JSCRuntime.h>
-// use_frameworks! transforms the dash to underscore
-#elif __has_include(<React_jsc/JSCRuntime.h>)
-#import <React_jsc/JSCRuntime.h>
 #else
 #import <jsi/JSCRuntime.h>
 #endif
