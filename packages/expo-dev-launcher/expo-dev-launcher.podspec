@@ -74,7 +74,6 @@ Pod::Spec.new do |s|
   # Swift/Objective-C compatibility
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
-"SWIFT_OBJC_INTEROP_MODE" => "objcxx",
     'OTHER_CFLAGS[config=*Debug*]' => other_c_flags,
     'OTHER_SWIFT_FLAGS[config=*Debug*]' => other_swift_flags,
     'HEADER_SEARCH_PATHS' => header_search_paths.join(' '),

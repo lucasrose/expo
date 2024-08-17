@@ -23,8 +23,7 @@ Pod::Spec.new do |s|
 
   # Swift/Objective-C compatibility
   s.pod_target_xcconfig = {
-    'DEFINES_MODULE' => 'YES',
-    "SWIFT_OBJC_INTEROP_MODE" => "objcxx",
+    'DEFINES_MODULE' => 'YES'
   }
 
   s.resource_bundles = {'ExpoFileSystem_privacy' => ['PrivacyInfo.xcprivacy']}

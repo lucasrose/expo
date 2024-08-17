@@ -25,7 +25,6 @@ Pod::Spec.new do |s|
     'GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS' => 'YES',
     'GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS' => 'YES',
     'DEFINES_MODULE' => 'YES',
-"SWIFT_OBJC_INTEROP_MODE" => "objcxx",
     'SWIFT_COMPILATION_MODE' => 'wholemodule'
   }
   s.user_target_xcconfig = {

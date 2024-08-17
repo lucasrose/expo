@@ -20,7 +20,6 @@ Pod::Spec.new do |s|
 
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
-"SWIFT_OBJC_INTEROP_MODE" => "objcxx",
     'SWIFT_COMPILATION_MODE' => 'wholemodule'
   }
 
