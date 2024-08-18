@@ -41,9 +41,10 @@ RuntimeSharedPtr makeRuntime() {
   #endif
 }
 
-CallInvokerSharedPtr makeSharedTestingSyncJSCallInvoker(RuntimeSharedPtr runtime) {
-  auto callInvoker = std::make_shared<TestingSyncJSCallInvoker>(runtime);
-  return std::dynamic_pointer_cast<react::CallInvoker>(callInvoker);
+CallInvokerSharedPtr makeSharedTestingSyncJSCallInvoker(RuntimeSharedPtr runtime);
+
+RuntimeSharedPtr makeShared(jsi::Runtime &runtime) {
+  return std::shared_ptr<jsi::Runtime>(std::shared_ptr<jsi::Runtime>(), &runtime);
 }
 
 ObjectSharedPtr makeShared(jsi::Runtime &runtime, jsi::Object &object) {
@@ -52,5 +53,10 @@ ObjectSharedPtr makeShared(jsi::Runtime &runtime, jsi::Object &object) {
 }
 
 }; // namespace expo
+
+//namespace ExpoModulesCoreJSI {
+//class JavaScriptRuntime;
+//JavaScriptRuntime init(jsi::Runtime &runtime, expo::CallInvokerSharedPtr callInvoker);
+//}
 
 #endif // __cplusplus

@@ -6,8 +6,8 @@
 public typealias RCTPromiseResolveBlock = (_ result: Any) -> Void
 public typealias RCTPromiseRejectBlock = (_ code: String?, _ message: String?, _ error: NSError?) -> Void
 
-@objc(EXJavaScriptRuntime)
-open class JavaScriptRuntime: NSObject {
+@_expose(Cxx)
+open class JavaScriptRuntime {
   /**
 
    */
@@ -40,7 +40,19 @@ open class JavaScriptRuntime: NSObject {
     self.jsCallInvoker = callInvoker
   }
 
-  override public init() {
+  public init(runtime: Any, callInvoker: Any) {
+    let runtime = unsafeBitCast(runtime, to: expo.RuntimeSharedPtr.self)
+    let callInvoker = unsafeBitCast(callInvoker, to: expo.CallInvokerSharedPtr.self)
+    self.runtime = runtime
+    self.jsCallInvoker = callInvoker
+  }
+
+  public init(runtime: UnsafeRawPointer, callInvoker: UnsafeRawPointer) {
+    self.runtime = runtime.load(as: expo.RuntimeSharedPtr.self)
+    self.jsCallInvoker = callInvoker.load(as: expo.CallInvokerSharedPtr.self)
+  }
+
+  public init() {
     let runtime = expo.makeRuntime()
     self.runtime = runtime
     self.jsCallInvoker = expo.makeSharedTestingSyncJSCallInvoker(runtime)

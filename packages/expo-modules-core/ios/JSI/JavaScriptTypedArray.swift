@@ -16,7 +16,7 @@ public enum TypedArrayKind: Int32 {
   case BigUint64Array = 11
 }
 
-@objc
+@_expose(Cxx)
 public class JavaScriptTypedArray: JavaScriptObject {
   let typedArray: expo.TypedArray
   public let kind: TypedArrayKind
@@ -28,7 +28,8 @@ public class JavaScriptTypedArray: JavaScriptObject {
     self.kind = TypedArrayKind(rawValue: typedArray.getKind(&runtime.pointee).rawValue)!
     self.typedArray = typedArray
 
-    super.init(runtime: runtime, pointee: &pointee)
+    fatalError()
+//    super.init(runtime: runtime, pointee: consume pointee)
   }
 
   public func getUnsafeMutableRawPointer() -> UnsafeMutableRawPointer {

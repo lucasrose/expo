@@ -1,5 +1,11 @@
 framework module ExpoModulesCoreJSI {
   umbrella header "ExpoModulesCoreJSI.h"
-
   export *
+
+  module * { export * }
+}
+
+module ExpoModulesCoreJSI.Swift {
+  header "Swift.h"
+  requires objc
 }

@@ -1,49 +1,52 @@
-//// Copyright 2018-present 650 Industries. All rights reserved.
-//
-//#if __has_include(<ReactCommon/RCTRuntimeExecutor.h>)
-//#import <ReactCommon/RCTRuntimeExecutor.h>
-//#endif // React Native >=0.74
-//
-//#import <ExpoModulesCore/EXJSIInstaller.h>
-////#import <ExpoModulesCore/EXJavaScriptRuntime.h>
-////#import <ExpoModulesCore/EXpoModulesHostObject.h>
-//#import <ExpoModulesCore/BridgelessJSCallInvoker.h>
-//#import <ExpoModulesCore/LazyObject.h>
-//#import <ExpoModulesCore/SharedObject.h>
-//#import <ExpoModulesCore/EventEmitter.h>
-//#import <ExpoModulesCore/NativeModule.h>
-////#import <ExpoModulesCore/Swift.h>
-//
-//namespace jsi = facebook::jsi;
-//
-///**
-// Property name of the core object in the global scope of the Expo JS runtime.
-// */
-//NSString *const EXGlobalCoreObjectPropertyName = @"expo";
-//
-///**
-// Property name used to define the modules host object in the main object of the Expo JS runtime.
-// */
-//static NSString *modulesHostObjectPropertyName = @"modules";
-//
-//@interface RCTBridge (ExpoBridgeWithRuntime)
-//
-//- (void *)runtime;
-//- (std::shared_ptr<facebook::react::CallInvoker>)jsCallInvoker;
-//
-//@end
-//
-//@implementation EXJavaScriptRuntimeManager
-//
-//+ (nullable EXRuntime *)runtimeFromBridge:(nonnull RCTBridge *)bridge
+// Copyright 2018-present 650 Industries. All rights reserved.
+
+#if __has_include(<ReactCommon/RCTRuntimeExecutor.h>)
+#import <ReactCommon/RCTRuntimeExecutor.h>
+#endif // React Native >=0.74
+
+#import <ExpoModulesCore/EXJSIInstaller.h>
+//#import <ExpoModulesCore/EXJavaScriptRuntime.h>
+//#import <ExpoModulesCore/EXpoModulesHostObject.h>
+#import <ExpoModulesCore/BridgelessJSCallInvoker.h>
+#import <ExpoModulesCore/LazyObject.h>
+#import <ExpoModulesCore/SharedObject.h>
+#import <ExpoModulesCore/EventEmitter.h>
+#import <ExpoModulesCore/NativeModule.h>
+#import <ExpoModulesCore/Swift.h>
+
+#import <ExpoModulesCoreJSI/Swift.h>
+
+namespace jsi = facebook::jsi;
+
+/**
+ Property name of the core object in the global scope of the Expo JS runtime.
+ */
+NSString *const EXGlobalCoreObjectPropertyName = @"expo";
+
+/**
+ Property name used to define the modules host object in the main object of the Expo JS runtime.
+ */
+static NSString *modulesHostObjectPropertyName = @"modules";
+
+@interface RCTBridge (ExpoBridgeWithRuntime)
+
+- (void *)runtime;
+- (std::shared_ptr<facebook::react::CallInvoker>)jsCallInvoker;
+
+@end
+
+@implementation EXJavaScriptRuntimeManager
+
+//+ (nullable ExpoModulesCoreJSI::JavaScriptRuntime *)runtimeFromBridge:(nonnull RCTBridge *)bridge
 //{
+//  ExpoModulesCoreJSI::JavaScriptRuntime::init
+//  return ExpoModulesCoreJSI::JavaScriptRuntime::init((const void *)bridge.runtime, (const void *)bridge.jsCallInvoker.get());
 //  jsi::Runtime *jsiRuntime = reinterpret_cast<jsi::Runtime *>(bridge.runtime);
-//  return nil;
-////  return jsiRuntime ? [[EXRuntime alloc] initWithRuntime:jsiRuntime callInvoker:bridge.jsCallInvoker] : nil;
+//  return jsiRuntime ? [[JavaScriptRuntime alloc] initWithRuntime:jsiRuntime callInvoker:bridge.jsCallInvoker] : nil;
 //}
-//
+
 //#if __has_include(<ReactCommon/RCTRuntimeExecutor.h>)
-//+ (nullable EXRuntime *)runtimeFromBridge:(nonnull RCTBridge *)bridge withExecutor:(nonnull RCTRuntimeExecutor *)executor
+//+ (nullable JavaScriptRuntime *)runtimeFromBridge:(nonnull RCTBridge *)bridge withExecutor:(nonnull RCTRuntimeExecutor *)executor
 //{
 //  jsi::Runtime *jsiRuntime = reinterpret_cast<jsi::Runtime *>(bridge.runtime);
 //
@@ -57,8 +60,7 @@
 //    }];
 //  });
 //
-//  return nil;
-////  return jsiRuntime ? [[EXRuntime alloc] initWithRuntime:jsiRuntime callInvoker:callInvoker] : nil;
+//  return jsiRuntime ? [[JavaScriptRuntime alloc] initWithRuntime:jsiRuntime callInvoker:callInvoker] : nil;
 //}
 //#endif // React Native >=0.74
 //
@@ -110,5 +112,5 @@
 //{
 ////  expo::NativeModule::installClass(*[runtime get]);
 //}
-//
-//@end
+
+@end

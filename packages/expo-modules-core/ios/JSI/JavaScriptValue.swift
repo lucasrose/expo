@@ -1,7 +1,5 @@
 // Copyright 2022-present 650 Industries. All rights reserved.
 
-//@_implementationOnly import ExpoModulesCoreCxx
-
 /**
  Enum with available kinds of values. It's almost the same as a result of "typeof"
  in JavaScript, however `null` has its own kind (typeof null == "object").
@@ -17,8 +15,8 @@ public enum JavaScriptValueKind: String {
   case object
 }
 
-//@objc
-public class JavaScriptValue: @unchecked Sendable {
+@_expose(Cxx)
+public class JavaScriptValue {
   public static let undefined = JavaScriptValue(value: .undefined())
   public static let null = JavaScriptValue(value: .null())
 

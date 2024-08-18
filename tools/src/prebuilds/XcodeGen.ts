@@ -132,10 +132,13 @@ export async function createSpecFromPodspecAsync(
         FRAMEWORK_SEARCH_PATHS: constructFrameworkSearchPaths(dependencies),
         HEADER_SEARCH_PATHS: constructHeaderSearchPaths(dependenciesNames),
 
-        // MODULEMAP_FILE: 'JSI/module.modulemap',
+        MODULEMAP_FILE: 'JSI/module.modulemap',
         BUILD_LIBRARY_FOR_DISTRIBUTION: 'YES',
         SWIFT_INSTALL_MODULE: 'YES',
-        SWIFT_INSTALL_OBJC_HEADER: 'NO',
+
+        // If the Swift/C++ interop is enabled, the Objective-C header is in C++
+        // that libraries without the interop enabled don't understand.
+        SWIFT_INSTALL_OBJC_HEADER: 'YES',
 
         // Suppresses deprecation warnings coming from frameworks like OpenGLES.
         VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS: arrayize(podspec.frameworks).join(' '),

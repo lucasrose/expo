@@ -2,8 +2,10 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef __cplusplus
+
 // TODO: Add a comment that this is a hack to stop Swift interface verifier including these headers
-#if __has_include(<jsi/jsi.h>) && defined(__cplusplus)
+#if __has_include(<jsi/jsi.h>)
 #import <jsi/jsi.h>
 #import <ReactCommon/CallInvoker.h>
 
@@ -18,4 +20,6 @@
 #import "TestingSyncJSCallInvoker.h"
 #import "TypedArray.h"
 
-#endif
+#endif // __has_include(<jsi/jsi.h>)
+
+#endif // __cplusplus

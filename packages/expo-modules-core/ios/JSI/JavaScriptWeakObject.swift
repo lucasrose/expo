@@ -1,9 +1,7 @@
 // Copyright 2024-present 650 Industries. All rights reserved.
 
-//@_implementationOnly import ExpoModulesCoreCxx
-
-@objc
-public class JavaScriptWeakObject: NSObject {
+@_expose(Cxx)
+public class JavaScriptWeakObject {
   internal weak var _runtime: JavaScriptRuntime?
 
   internal var runtime: JavaScriptRuntime {
