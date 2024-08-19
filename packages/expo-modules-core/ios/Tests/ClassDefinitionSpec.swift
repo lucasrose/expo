@@ -99,7 +99,7 @@ class ClassDefinitionSpec: ExpoSpec {
         expect(isInstanceOf.getBool()) == true
       }
 
-      it("defines properties on initialization") {
+      fit("defines properties on initialization") {
         // The properties are not specified in the prototype, but defined during initialization.
         let object = try runtime.eval("new expo.modules.ClassTest.MyClass()").asObject()
         expect(object.getPropertyNames()).to(contain("foo"))

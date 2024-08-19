@@ -11,6 +11,13 @@ public final class ImageModule: Module {
   public func definition() -> ModuleDefinition {
     Name("ExpoImage")
 
+    Function("addNumbers") { (a: Double, b: Double) in
+      return a + b
+    }
+    Function("addStrings") { (a: String, b: String) in
+      return a + b
+    }
+
     OnCreate {
       ImageModule.registerCoders()
       ImageModule.registerLoaders()
