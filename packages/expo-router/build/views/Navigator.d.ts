@@ -52,20 +52,20 @@ export declare function useNavigatorContext(): {
             source?: string | undefined;
             target?: string | undefined;
         }>)): void;
-        navigate<RouteName extends string>(...args: RouteName extends unknown ? [screen: RouteName] | [screen: RouteName, params: object | undefined] : never): void;
-        navigate<RouteName_1 extends string>(options: RouteName_1 extends unknown ? {
-            name: RouteName_1;
+        navigate<RouteName extends string>(...args: [screen: string] | [screen: string, params: object | undefined]): void;
+        navigate<RouteName_1 extends string>(options: {
+            name: string;
             params: object | undefined;
             path?: string | undefined;
             merge?: boolean | undefined;
-        } : never): void;
-        navigateDeprecated<RouteName_2 extends string>(...args: RouteName_2 extends unknown ? [screen: RouteName_2] | [screen: RouteName_2, params: object | undefined] : never): void;
-        navigateDeprecated<RouteName_3 extends string>(options: RouteName_3 extends unknown ? {
-            name: RouteName_3;
+        }): void;
+        navigateDeprecated<RouteName_2 extends string>(...args: [screen: string] | [screen: string, params: object | undefined]): void;
+        navigateDeprecated<RouteName_3 extends string>(options: {
+            name: string;
             params: object | undefined;
             merge?: boolean | undefined;
-        } : never): void;
-        preload<RouteName_4 extends string>(...args: RouteName_4 extends unknown ? [screen: RouteName_4] | [screen: RouteName_4, params: object | undefined] : never): void;
+        }): void;
+        preload<RouteName_4 extends string>(...args: [screen: string] | [screen: string, params: object | undefined]): void;
         reset(state: Readonly<{
             key: string;
             index: number;
@@ -116,7 +116,7 @@ export declare function useNavigatorContext(): {
         }>>): void;
     } & import("@react-navigation/native").PrivateValueStore<[import("@react-navigation/native").ParamListBase, unknown, unknown]> & import("@react-navigation/native").EventEmitter<Record<string, any>> & {
         setParams<RouteName_5 extends string>(params: Partial<object | undefined>): void;
-    } & Record<string, () => void>;
+    } & Record<string, (...args: any) => void>;
     descriptors: Record<string, import("@react-navigation/native").Descriptor<{}, Omit<{
         dispatch(action: Readonly<{
             type: string;
@@ -137,20 +137,20 @@ export declare function useNavigatorContext(): {
             source?: string | undefined;
             target?: string | undefined;
         }>)): void;
-        navigate<RouteName_6 extends string>(...args: RouteName_6 extends unknown ? [screen: RouteName_6] | [screen: RouteName_6, params: object | undefined] : never): void;
-        navigate<RouteName_7 extends string>(options: RouteName_7 extends unknown ? {
-            name: RouteName_7;
+        navigate<RouteName_6 extends string>(...args: [screen: string] | [screen: string, params: object | undefined]): void;
+        navigate<RouteName_7 extends string>(options: {
+            name: string;
             params: object | undefined;
             path?: string | undefined;
             merge?: boolean | undefined;
-        } : never): void;
-        navigateDeprecated<RouteName_8 extends string>(...args: RouteName_8 extends unknown ? [screen: RouteName_8] | [screen: RouteName_8, params: object | undefined] : never): void;
-        navigateDeprecated<RouteName_9 extends string>(options: RouteName_9 extends unknown ? {
-            name: RouteName_9;
+        }): void;
+        navigateDeprecated<RouteName_8 extends string>(...args: [screen: string] | [screen: string, params: object | undefined]): void;
+        navigateDeprecated<RouteName_9 extends string>(options: {
+            name: string;
             params: object | undefined;
             merge?: boolean | undefined;
-        } : never): void;
-        preload<RouteName_10 extends string>(...args: RouteName_10 extends unknown ? [screen: RouteName_10] | [screen: RouteName_10, params: object | undefined] : never): void;
+        }): void;
+        preload<RouteName_10 extends string>(...args: [screen: string] | [screen: string, params: object | undefined]): void;
         reset(state: Readonly<{
             key: string;
             index: number;
@@ -219,7 +219,7 @@ export declare function useNavigatorContext(): {
         routes: import("@react-navigation/native").NavigationRoute<import("@react-navigation/native").ParamListBase, string>[];
         type: string;
         stale: false;
-    }>>> & import("@react-navigation/native").PrivateValueStore<[import("@react-navigation/native").ParamListBase, string, Record<string, any>]> & Record<string, () => void>, import("@react-navigation/native").RouteProp<import("@react-navigation/native").ParamListBase, string>>>;
+    }>>> & import("@react-navigation/native").PrivateValueStore<[import("@react-navigation/native").ParamListBase, string, Record<string, any>]> & Record<string, (...args: any) => void>, import("@react-navigation/native").RouteProp<import("@react-navigation/native").ParamListBase, string>>>;
     router: RouterFactory<any, any, any>;
 };
 export declare function useSlot(): JSX.Element | null;

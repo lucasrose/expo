@@ -2,10 +2,10 @@
 import { DrawerNavigationOptions, DrawerNavigationEventMap } from '@react-navigation/drawer';
 import { DrawerNavigationState, ParamListBase } from '@react-navigation/native';
 export declare const Drawer: import("react").ForwardRefExoticComponent<Omit<Omit<import("@react-navigation/native").DefaultNavigatorOptions<ParamListBase, string | undefined, DrawerNavigationState<ParamListBase>, DrawerNavigationOptions, DrawerNavigationEventMap, import("@react-navigation/drawer").DrawerNavigationProp<ParamListBase>> & import("@react-navigation/native").DefaultRouterOptions & {
-    backBehavior?: import("@react-navigation/routers/lib/typescript/src/TabRouter").BackBehavior | undefined;
+    backBehavior?: import("@react-navigation/routers/lib/typescript/commonjs/src/TabRouter").BackBehavior | undefined;
 } & {
     defaultStatus?: import("@react-navigation/native").DrawerStatus | undefined;
-} & import("@react-navigation/drawer/lib/typescript/src/types").DrawerNavigationConfig, "children" | "initialRouteName" | "id" | "screenOptions" | "layout" | "screenListeners" | "screenLayout" | "UNSTABLE_getStateForRouteNamesChange"> & import("@react-navigation/native").DefaultRouterOptions<string> & {
+} & import("@react-navigation/drawer/lib/typescript/commonjs/src/types").DrawerNavigationConfig, "children" | "initialRouteName" | "id" | "screenOptions" | "layout" | "screenListeners" | "screenLayout" | "UNSTABLE_getStateForRouteNamesChange"> & import("@react-navigation/native").DefaultRouterOptions<string> & {
     children: import("react").ReactNode;
     layout?: ((props: {
         state: DrawerNavigationState<ParamListBase>;
@@ -70,10 +70,10 @@ export declare const Drawer: import("react").ForwardRefExoticComponent<Omit<Omit
 } & {
     id?: undefined;
 }, "children"> & Partial<Pick<Omit<import("@react-navigation/native").DefaultNavigatorOptions<ParamListBase, string | undefined, DrawerNavigationState<ParamListBase>, DrawerNavigationOptions, DrawerNavigationEventMap, import("@react-navigation/drawer").DrawerNavigationProp<ParamListBase>> & import("@react-navigation/native").DefaultRouterOptions & {
-    backBehavior?: import("@react-navigation/routers/lib/typescript/src/TabRouter").BackBehavior | undefined;
+    backBehavior?: import("@react-navigation/routers/lib/typescript/commonjs/src/TabRouter").BackBehavior | undefined;
 } & {
     defaultStatus?: import("@react-navigation/native").DrawerStatus | undefined;
-} & import("@react-navigation/drawer/lib/typescript/src/types").DrawerNavigationConfig, "children" | "initialRouteName" | "id" | "screenOptions" | "layout" | "screenListeners" | "screenLayout" | "UNSTABLE_getStateForRouteNamesChange"> & import("@react-navigation/native").DefaultRouterOptions<string> & {
+} & import("@react-navigation/drawer/lib/typescript/commonjs/src/types").DrawerNavigationConfig, "children" | "initialRouteName" | "id" | "screenOptions" | "layout" | "screenListeners" | "screenLayout" | "UNSTABLE_getStateForRouteNamesChange"> & import("@react-navigation/native").DefaultRouterOptions<string> & {
     children: import("react").ReactNode;
     layout?: ((props: {
         state: DrawerNavigationState<ParamListBase>;
